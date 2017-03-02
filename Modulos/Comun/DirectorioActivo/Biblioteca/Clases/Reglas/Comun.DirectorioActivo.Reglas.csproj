@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3294B685-CA90-4353-9214-FF41ECFE71CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dapesa.Comun.DirectorioActivo.Reglas</RootNamespace>
+    <AssemblyName>Dapesa.Comun.DirectorioActivo.Reglas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IDirectorio.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Comun\Biblioteca\Clases\Entidades\Comun.Entidades.csproj">
+      <Project>{1f35cea7-7b03-4355-9dfb-901ff53bc955}</Project>
+      <Name>Comun.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Criptografia\Biblioteca\Clases\Reglas\Criptografia.Reglas.csproj">
+      <Project>{5dfc2659-d141-4819-b456-c006754a7aec}</Project>
+      <Name>Criptografia.Reglas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Seguridad\Biblioteca\Clases\Entidades\Seguridad.Entidades.csproj">
+      <Project>{3a12f1ca-845f-4af9-b8da-a43b397b6f5c}</Project>
+      <Name>Seguridad.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comun\Comun.DirectorioActivo.Comun.csproj">
+      <Project>{7cb61d24-945d-4c9c-8a8f-2276af6add94}</Project>
+      <Name>Comun.DirectorioActivo.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Comun.DirectorioActivo.Entidades.csproj">
+      <Project>{c4bc5f52-3250-4a2c-8a9f-dd59765c69cd}</Project>
+      <Name>Comun.DirectorioActivo.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

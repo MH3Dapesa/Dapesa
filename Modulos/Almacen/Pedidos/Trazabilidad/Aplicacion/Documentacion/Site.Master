@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Dapesa.Almacen.Pedidos.Trazabilidad.IU.Documentacion.Site" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+	<title></title>
+	<link rel="shortcut icon" type="image/png" href="~/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="~/Css/HojaEstilos.css" />
+	<script type="text/javascript" src="/Js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(document).keydown(function (e) {
+				if (e.ctrlKey && e.keyCode == '80') {
+					e.preventDefault();
+					e.stopPropagation();
+					return false;
+				}
+			});
+		});
+		function cancelAsyncPostBack() {
+			var manager = Sys.WebForms.PageRequestManager.getInstance();
+
+			if (manager.get_isInAsyncPostBack())
+				manager.abortPostBack();
+		}
+	</script>
+	<asp:ContentPlaceHolder ID="cphEncabezado" runat="server" />
+</head>
+<body>
+	<form id="frmMain" runat="server" enctype="multipart/form-data" method="post">
+		<asp:ToolkitScriptManager ID="smScriptManager" runat="server" ScriptMode="Release" EnablePartialRendering="true" EnableScriptGlobalization="true" EnableScriptLocalization="true" AsyncPostBackTimeout="360000" />
+		<asp:UpdateProgress ID="upPanelEspera" runat="server" DisplayAfter="0">
+			<ProgressTemplate>
+				<div class="entireScreen updateProgressBackground"></div>
+				<div class="centered preloader">
+					<asp:Image ID="imgEsperante" runat="server" ImageUrl="~/Img/esperante.gif" AlternateText="procesando solicitud..." />
+					<br /><br />
+					<asp:LinkButton ID="btnCancelar" runat="server" Text="Cancelar" OnClientClick="cancelAsyncPostBack()" CausesValidation="false" Visible="false" />
+				</div>
+			</ProgressTemplate>
+		</asp:UpdateProgress>
+		<div style="width:98%;height:80%;padding-left:10px;">
+			<table border="0" style="width:100%;">
+				<tr>
+					<td style="width:1000px;">
+						<nav class="navigation">
+							<ul id="luMenu" runat="server">
+								<li><asp:HyperLink ID="hlHome" runat="server" NavigateUrl="~/Default.aspx" Text="Home" /></li><!--
+							 --><li id="li01" runat="server" accesskey="@1@2@"><asp:HyperLink ID="hlAeroflash" runat="server" NavigateUrl="~/Formularios/Comun/Aeroflash.aspx" Text="Aeroflash" /></li><!--
+							 --><li id="li02" runat="server" accesskey="@1@5@"><asp:HyperLink ID="hlAfimex" runat="server" NavigateUrl="~/Formularios/SanRafael/Afimex.aspx" Text="Afimex" /></li><!--
+                                //Se anexo nuevo menu de Guias AltosPack 23/09/2015
+							 --><li id="li14" runat="server" accesskey="@2@"><asp:HyperLink ID="hlAltosPack" runat="server" NavigateUrl="~/Formularios/Leon/AltosPack.aspx" Text="AltosPack" /></li><!--                           
+                             --><li id="li03" runat="server" accesskey="@1@"><asp:HyperLink ID="hlEstafeta" runat="server" NavigateUrl="~/Formularios/SanRafael/Estafeta.aspx" Text="Estafeta" /></li><!--
+							 --><li id="li04" runat="server" accesskey="@1@2@5@"><asp:HyperLink ID="lhEstrellaBlanca" runat="server" NavigateUrl="~/Formularios/Comun/EstrellaBlanca.aspx" Text="Estrella Blanca" /></li><!--
+							 --><li id="li05" runat="server" accesskey="@1@2@3@5@"><asp:HyperLink ID="hlEtiquetaBlanca" runat="server" NavigateUrl="~/Formularios/Comun/EtiquetaBlanca.aspx" Text="Etiqueta blanca" /></li><!--
+							 --><li id="li06" runat="server" accesskey="@2@"><asp:HyperLink ID="hlFletesSur" runat="server" NavigateUrl="~/Formularios/Leon/FletesSur.aspx" Text="Fletes Sur" /></li><!--
+							 --><li id="li07" runat="server" accesskey="@2@"><asp:HyperLink ID="hlGacelas" runat="server" NavigateUrl="~/Formularios/Leon/Gacelas.aspx" Text="Gacelas" /></li><!--
+							 --><li id="li17" runat="server" accesskey="@5@"><asp:HyperLink ID="hlHB" runat="server" NavigateUrl="~/Formularios/Monterrey/HB.aspx" Text="HB" /></li><!--
+                             --><li id="li15" runat="server" accesskey="@1@"><asp:HyperLink ID="hlIGAPAQ" runat="server" NavigateUrl="~/Formularios/SanRafael/IGAPAQ.aspx" Text="IGAPAQ" /></li><!--
+                             --><li id="li08" runat="server" accesskey="@1@"><asp:HyperLink ID="hlInbox" runat="server" NavigateUrl="~/Formularios/SanRafael/Inbox.aspx" Text="Inbox" /></li><!--
+							 --><li id="li09" runat="server" accesskey="@2@"><asp:HyperLink ID="hlODM" runat="server" NavigateUrl="~/Formularios/Leon/ODM.aspx" Text="ODM" /></li><!--
+							 --><li id="li10" runat="server" accesskey="@2@"><asp:HyperLink ID="hlAutlanExpress" runat="server" NavigateUrl="~/Formularios/Leon/AutlanExpress.aspx" Text="Pacaso" /></li><!--
+							 --><li id="li11" runat="server" accesskey="@2@"><asp:HyperLink ID="hlServicioExpress" runat="server" NavigateUrl="~/Formularios/Leon/ServicioExpress.aspx" Text="Servicio Express" /></li><!--
+							 --><li id="li12" runat="server" accesskey="@2@"><asp:HyperLink ID="hlStarPack" runat="server" NavigateUrl="~/Formularios/Leon/StarPack.aspx" Text="StarPack" /></li><!--
+							  --><li id="li16" runat="server" accesskey="@5@"><asp:HyperLink ID="hlSumypack" runat="server" NavigateUrl="~/Formularios/Monterrey/Sumypack.aspx" Text="Sumypack" /></li><!--
+                             --><li id="li13" runat="server" accesskey="@2@"><asp:HyperLink ID="hlVencedor" runat="server" NavigateUrl="~/Formularios/Leon/Vencedor.aspx" Text="Vencedor" /></li>
+							</ul>
+						</nav>
+					</td>
+					<td style="width:auto;text-align:right;padding-right:20px;">
+						<asp:Label ID="lblCredenciales" runat="server" CssClass="upperText" />
+					</td>
+					<td style="width:20px;text-align:right;">
+						<asp:LinkButton ID="btnSalir" runat="server" Text="Salir" OnClick="btnSalir_Click" CausesValidation="false" />
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left:14px;font-size:8pt;" colspan="3">
+						<table border="0" style="width:100%;">
+							<tr>
+								<td style="width:100%;">&nbsp;</td>
+								<td style="text-align:right;vertical-align:bottom;" rowspan="2">&nbsp;
+									<asp:Image ID="imgLogo" runat="server" ImageUrl="~/Img/dapesa.png" Height="35" AlternateText="DAPESA" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<asp:SiteMapPath ID="smpUbicacion" runat="server" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<asp:ContentPlaceHolder ID="cphContenidoPrincipal" runat="server" />
+		</div>
+	</form>
+</body>
+</html>

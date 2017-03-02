@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="Home"  description="Inicio">
+    <siteMapNode title="Credito" description="Reportes Credito">
+      <siteMapNode url="~/Clientes/ReferenciaBancaria.aspx" title="Referencia bancaria"  description="Reporte referencias bancarias de clientes" />
+      <siteMapNode url="~/Clientes/CobrosDiarios.aspx" title="Cobranza diaria general"  description="Reporte de cobranza diaria general" />
+      <siteMapNode url="~/Clientes/AntiguedadSaldos.aspx" title="Antigüedad de saldos"  description="Reporte de antigüedad de saldos" />
+      <siteMapNode url="~/Clientes/AntiguedadSaldosAuxiliar.aspx" title="Concentrado antigüedad de saldos de clientes  por auxiliar"  description="Concentrado antigüedad de saldos de clientes  por auxiliar" />
+      <siteMapNode url="~/Clientes/AntiguedadSaldosGeneral.aspx" title="Concentrado antigüedad de saldos de clientes"  description="Concentrado antigüedad de saldos de clientes" />
+  </siteMapNode>
+  </siteMapNode>
+</siteMap>

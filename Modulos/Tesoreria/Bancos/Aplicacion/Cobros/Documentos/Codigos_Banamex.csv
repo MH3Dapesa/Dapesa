@@ -1,0 +1,597 @@
+01|00|Retiro chq en ventanilla
+01|37|Compra Inversión Integral
+01|38|Diferencia Integra 3
+01|43|Préstamo hipotecario
+01|44|Cargo por cartera
+01|45|Traspaso total a cuenta S.A.R
+01|46|Traspaso diferencia a Cta. S.A.R
+01|47|Traspaso ajuste a cuenta S.A.R
+02|00|Cargo de cheque
+02|36|Cheques (Cobro Inmediato)
+03|00|Cheque certificado
+04|01|Cargo Devol. docto depósito SBC
+04|02|Cargo devol. documento foráneo
+04|04|Cargo Devol. docto depósito firme
+05|00|Cargo diverso
+05|01|Comisión cheque de caja
+05|02|Comisión orden de pago
+05|03|Recolección de fondos
+05|04|Pago de nómina
+05|05|Cheques Exentos 
+05|06|Por instrucción del cliente
+05|07|Por cheques especiales
+05|08|Ensobretado
+05|09|Por inversiones a plazo
+05|10|Pago a proveedores
+05|11|Por compra oro/dlls Divisas 
+05|12|Pago de bonos
+05|13|Pago de compensaciones
+05|14|Pago a transportistas
+05|15|Recuperación de cheque
+05|16|Recup. cheque fuera de horario
+05|17|Cobro especial devolución
+05|18|Por traspaso Cta Horizonte
+05|19|Pago automático de nómina
+05|20|Comisión por pago de nómina
+05|21|Ventas netas tarjeta
+05|22|Cgo x comisión tarjeta 
+05|23|Cgo iva comisión tarjeta 10%
+05|24|Ajuste diverso tarjetas
+05|25|Su pago american express
+05|26|Trans. fondos CLCO
+05|27|Trans. fondos CHCK
+05|28|Trans. fondos CBAC
+05|29|Trans. fondos COMA
+05|30|Trans. fondos T.D.
+05|31|Trans. fondos SWAC
+05|32|Trans. fondos OVNG
+05|33|Trans. fondos CD'S
+05|34|Cargo Diverso Tarjetas
+05|35|Traspaso Ref.
+05|36|Pago de servicio
+05|37|Orden de pago
+05|38|Pago interban
+05|39|Cargo Vía EDI
+05|40|Cargo global EDI
+05|41|Cargo por comisión
+05|42|Cargo por cobranza
+05|43|Cargo global
+05|44|Disp en efectivo cajero P.
+05|45|Traspaso total a cuenta S.A.R
+05|46|Traspaso diferencia a Cta. S.A.R
+05|47|Traspaso ajuste a cuenta S.A.R
+05|48|Comisión por diferimiento
+05|49|Iva comisión por diferimiento 
+05|50|Traspaso a Cta de menores
+05|51|Comis Servicio Recepción Pagos
+05|52|IVA Com Servicio Recep. Pagos
+05|53|Disp en efectivo cajero P.
+05|54|Cgo Com chq. certificado
+05|55|Compra Fondo Banamex
+05|56|Cgo Iva comisión Tarjeta 15%
+05|57|Devol. C.Giros Mon Extranjera
+05|58|Tarjetas Banamex
+05|59|Comisión por premia puntos
+05|60|Iva Comisión premia puntos 10
+05|61|Iva Comisión premia puntos 15 
+05|62|Cargo por depósito no efectuado
+05|63|Rechazo incumpl. de convenio dep/pagares
+06|00|Cargo x Reg y man cobranza
+07|00|Retiro x corrección
+07|31|Deposito en Efectivo 
+07|32|Deposito con Cheques Banamex
+07|33|Deposito con Cheques Otros Bancos
+07|34|Deposito Cheque de Viajero 
+07|35|Deposito Divisa
+07|36|Deposito Tarjeta (Crédito)
+07|37|Traspaso de Cuenta de Cheques 
+07|38|Deposito Amonedados Oro/platino
+07|39|Deposito Amonedados Plata
+07|40|Cheque de Caja 
+07|41|Cheque Certificado 
+07|42|Por corrección operación interna 
+07|43|Depósito con cheque Banamex M.N. 
+07|44|Depósito por traspaso de Cta. de cheques M.N.
+07|45|Depósito por corrección interna de M.N.
+07|46|Depósito efectivo de M.N.
+08|00|Cheque Protegido
+09|00|Cargo por cartera
+10|00|Depósito por contrato
+10|01|Depósito de efectivo
+10|02|Depósito Docto. en firme
+10|03|Depósito Docto. foráneo
+10|04|Abono por instrucciones de 
+10|05|Abono por traspaso
+10|06|Abono por corrección
+10|07|Depósito Fecha valor
+10|08|Ventas netas tarjetas
+10|09|Servicio Depósito S.B.C.
+10|10|Depósito de nómina
+10|11|Ajuste diverso tarjeta
+10|12|Abono por instruccción S408
+10|13|Depósito de cartera
+10|14|Depósito por Devol. Mcía.
+10|15|Depósito por tarjeta
+10|16|Abono por Com tarjeta 
+10|17|Abono IVA por tarjeta 10%
+10|18|Abono IVA por tarjeta 15%
+10|19|Abono por cobranza
+10|20|Bonificación compra de giros
+10|21|Abono por Disp no efectuada
+10|22|Dep. por reemb. Inv Pzo. fijo
+10|23|Depósito de cartera
+10|24|Traspaso diferencia a Cta. S.A.R
+10|25|Traspaso ajuste a cuenta S.A.R
+10|26|Dep mixto Efec/Doctos BNM
+10|27|Traspaso Ref
+10|28|Abono vía EDI
+10|29|Pago vía EDI
+10|30|Pago recibido
+10|31|Abono global
+10|32|Abono por Disposición de Credito S403
+10|33|Depósito Vent Acciones en Integra
+10|37|Pago por cuenta de terceros
+10|38|Orden de abono
+10|39|Pago recibido
+10|40|Abono Comisión por diferimiento
+10|41|Abo IVA comisión por diferimiento
+10|42|Recepción de pagos
+10|43|Traspaso entre cuentas
+10|44|Depósito Doctos. Firme Banamex
+10|45|Diferencia Integra 3
+10|46|Venta Inversión Integral 
+10|47|Fondo integra
+10|48|Vencimiento de inversión
+10|49|Trans. fondos CLCO
+10|50|Trans. fondos CHCK
+10|51|Trans. fondos CBAC
+10|52|Trans. fondos COMA
+10|53|Trans. fondos T.D
+10|54|Trans. fondos SWAC
+10|55|Trans. fondos OVNG
+10|56|Trans. fondos CD'S
+10|57|Comisión por premia puntos
+10|58|Iva comisión premia puntos 10 
+10|59|Iva comisión premia puntos 15
+10|64|Abono por disposición no efectuda
+10|65|Venta/oro/dlls/divisas
+10|66|Abo por Devolución de Cheque #
+10|67|Comisión por Diferimiento
+10|68|Ahorro-Vivienda
+10|69|Abono Cuenta Balance Cero
+10|70|Abono por Disp No Efectuada MN
+10|71|Abono por Disp No Efectuada Dls
+10|73|Eliminación Por .
+10|74|Bonificación Cheque Devuelto
+10|75|Bonificación Manejo de Cuenta
+10|76|Bonificación IVA 10%
+10|77|Bonificación IVA 15%
+10|78|Salida de 150590 (Op. Cruz. Bancomer)
+10|88|Compra divisas en efectivo
+10|89|Compra metales amonedados en efectivo
+10|96|Servicio Depósito Seguro 
+10|97|Sobrante en Servicio Depósito Seguro 
+11|00|Depósito de efectivo
+11|01|Depósito en efectivo
+11|02|Depósito Doctos. Firme Banamex
+11|03|Dep mixto Efec/Doctos BNM
+11|04|Depósito de nómina
+11|05|Ventas netas tarjetas
+11|06|Abono por Com tarjeta
+11|07|Abono IVA por tarjeta 10%
+11|08|Ajuste diverso tarjeta 
+11|09|Trans. fondos CLCO
+11|10|Trans. fondos CHCK
+11|11|Trans. fondos CBAC
+11|12|Trans. fondos COMA
+11|13|Trans. fondos T.D
+11|14|Trans. fondos SWAC
+11|15|Trans. fondos OVNG
+11|16|Trans. fondos CD'S
+11|17|Traspaso Ref
+11|18|Abono vía EDI
+11|19|Pago vía EDI 
+11|20|Pago recibido
+11|21|Abono global
+11|22|Depósito de nómina
+11|23|Traspaso diferencia a Cta. S.A.R
+11|24|Traspaso ajuste a cuenta S.A.R
+11|25|Abono Comisión por diferimiento
+11|26|Abo IVA comisión por diferimiento
+11|27|Recepción de pagos
+11|28|Abono IVA por tarjeta 15%
+11|29|Comisión por premia puntos
+11|30|Iva comisión premia puntos 10
+11|31|Iva comisión premia puntos 15
+11|32|Abono por disposición no efectuada
+11|33|Pago recibido de 
+11|34|Pago recibido de
+11|35|Nómina recibida de
+11|36|Pensión Recibida de
+11|37|Devolución (ABONO) de operación REF.
+11|38|Abono recibido TEF
+11|39|Abono por pago cancelado REF.
+11|40|Abono por expiración de orden de pago REF.
+11|44|Depósito de cartera
+11|45|Traspaso diferencia a Cta. S.A.R
+11|46|Traspaso ajuste a cuenta S.A.R
+11|51|Depósito plástico Soriana.
+11|54|Deposito Divisa
+11|55|Deposito Cheque de Viajero  
+11|56|Deposito Tarjeta (Crédito)
+11|57|Deposito Amonedados Oro/platino
+11|58|Deposito Amonedados Plata 
+11|72|Depósito cheque de otro banco dlls
+12|00|Depósito Docto. en firme 
+13|00|Depósito S.B.C.
+14|00|Depósito Docto. foráneo
+15|00|Abono por cobranza
+17|00|Abono por instrucciones de
+17|03|Bonificación compra de giros
+17|04|Pago recibido
+18|00|Abono por corrección 
+19|00|Depósito de cartera
+20|00|Retiro por contrato
+20|01|Retiro chq en ventanilla
+20|02|Cargo de cheque
+20|03|Cheque certificado
+20|04|Cgo Com chq. certificado
+20|05|Cargo devol. docto. dep firme
+20|06|Cargo Devol. docto depos SBC
+20|07|Cargo devol docto foráneo
+20|08|Cargo diverso
+20|09|Retiro x corrección
+20|10|Retiro fecha valor
+20|11|Cargo por cartera
+20|12|Ventas netas tarjeta
+20|13|Su pago american express
+20|14|Retiro por cancelación
+20|15|Cgo x instrucc del S408
+20|16|Ajuste diverso tarjetas
+20|17|Disp efectivo ventanilla
+20|18|Retiro de tarjeta (Pagaré)
+20|19|Retiro por traspaso
+20|20|Disp en efectivo cajero P.
+20|21|Cgo x Reg y man cobranza
+20|22|Cgo x comisión tarjeta
+20|23|Cgo iva comisión tarjeta 10%
+20|24|Cgo Iva comisión Tarjeta 15%
+20|25|Comisión de fondos de inv. 
+20|26|Iva comisión fondos de inv.
+20|27|Com Cons adic. Bca Elec
+20|28|Iva com cons adic Bca Elec
+20|29|Devol. C.Giros Mon Extranjera
+20|30|Cargo por cartera
+20|31|Traspaso total a cuenta S.A.R
+20|32|Traspaso diferencia a Cta. S.A.R
+20|33|Traspaso ajuste a cuenta S.A.R
+20|34|Préstamo hipotecario
+20|35|Diferencia Integra 3
+20|36|Compra Inversión Integral
+20|37|Comisión cheque de caja 
+20|38|Comisión orden de pago
+20|39|Recolección de fondos
+20|40|Pago a terceros
+20|41|Por instrucción del cliente
+20|42|Pago de nómina
+20|43|Por cheques especiales
+20|44|Ensobretado
+20|45|Por inversiones a plazo
+20|46|Pago a proveedores
+20|47|Por compra oro/dlls Divisas
+20|48|Pago de bonos
+20|49|Pago de compensaciones
+20|50|Pago a transportistas
+20|51|Recuperación de cheque
+20|52|Recup. cheque fuera de horario
+20|53|Cobro especial devolución
+20|54|Por traspaso Cta Horizonte
+20|55|Pago automático de nómina
+20|56|Comisión por pago de nómina
+20|57|Traspaso Ref.
+20|58|Pago de servicio
+20|59|Orden de pago
+20|60|Pago interban
+20|61|Cargo Vía EDI
+20|62|Cargo global EDI
+20|63|Cargo por comisión
+20|64|Cargo por cobranza 
+20|65|Cargo global
+20|66|Traspaso a Cta de menores
+20|67|Comis Servicio Recepción Pagos
+20|68|IVA Com Servicio Recep. Pagos
+20|69|Compra Fondo Banamex
+20|70|Inicio inversión
+20|71|Traspaso a cuenta
+20|72|Cargo Comisión Cheques girados
+20|73|Comisión por diferimiento
+20|74|Iva comisión por diferimiento
+20|75|Trans. fondos CLCO
+20|76|Trans. fondos CHCK 
+20|77|Trans. fondos CBAC
+20|78|Trans. fondos COMA
+20|79|Trans. fondos T.D.
+20|80|Trans. fondos SWAC
+20|81|Trans. fondos OVNG
+20|82|Trans. fondos CD'S
+20|83|Cheque Protegido
+20|84|Disp efectivo ventanilla de ch. s/comisi
+20|85|Cargo Diverso Tarjetas
+20|86|Tarjetas Banamex
+20|87|Cgo. Comisión manejo de cta.
+20|88|Comisión por premia puntos
+20|89|Iva Comisión premia puntos 10
+20|90|Iva Comisión premia puntos 15
+20|93|Cancelación de Ahorros
+21|00|Cargo por depósito no efectuado
+21|01|Rechazo incumpl. de convenio dep/pagares
+21|02|Disp efectivo en ventanilla ch c/comis.
+21|03|Pagare Sky en linea
+21|04|Pago por Pedimento aduanal
+21|05|Cargo por disposición de cajero en Red
+21|06|Comisión por Diferimiento
+21|07|Retiro por Depósito Ahorro Vivienda
+21|08|Cargo Cta Balance Cero
+21|09|Disp. Efectivo Cajeros en MN de CM Dls.
+21|10|Disp. Efectivo Cajeros en DLS de CM Dls.
+21|11|Consumo Negocios Afiliados MN de CM DIs 
+21|12|Consumo Negocios Afiliados Dls de CM Dls
+21|13|Cargo por cheques sin transmisión
+21|14|Eliminación por
+21|15|Cgo por disp.  De Cajero Red MN CM Dls
+21|16|Cgo por disp.  De Cajero Red Dls CM Dls
+21|17|Cargo Ahorros
+21|18|Cargo parcial Cheque
+21|19|Cargo Parcial por Devol. Docto. Dep. firme
+21|20|Cargo Parcial por Devol. Docto. Dep. SBC
+21|21|Cargo Parcial por Devol. Docto. Foráneo
+21|22|Cgo Parcial Cheque
+21|23|Cargo Parcial por Devol. Docto. Dep. firme 
+21|24|Cargo Parcial por Devol. Docto. Dep. SBC
+21|25|Pagare Sky Batch
+21|26|Cargo por comisión de crédito S403
+21|27|Cargo IVA de Crédito S403
+21|28|Disposición Cajeros Red Comisión Especial
+21|29|Salida 231190 Op. Cruzada Bancomer
+21|30|Cargo Cta Balance Cero Mínimo/Máximo
+21|31|Cargo por Disp. Efvo. En Extranjero Visa/Master
+21|32|Cargo Voucher Visa MasterCard en Extranjero
+21|33|Cobro Cheque Número
+21|34|Cargo por compra Acciones en Integra
+21|35|Cargo por crédito S403 / S408
+21|36|Cargo por comisión de la 350 Ctas Concent
+21|37|Cargo IVA 10% Coms de la 350
+21|38|Cargo IVA 15% Coms de la 350
+21|39|Cargo vouchers Visa Mastercard Nacional
+22|26|Pago a terceros REF.
+22|27|Pago interbancario REF.
+22|28|Cargo gloal TEF
+22|29|Emisión de manager check num
+22|30|Emisión de orden de pago num
+22|38|Comisión Productos y Servicios
+22|39|IVA Comisión Productos y Servicios
+22|45|Cargo por Servicio Dotación Segura
+22|46|Faltante en Servicio Depósito Seguro  
+22|80|IDE recaudado periodo actual
+22|81|IDE recaudado periodo anterior
+22|82|IDE recaudado
+29|00|Eliminación de cargo
+30|00|Intereses de capitalización
+30|01|Abono ajuste ciclo anterior
+30|02|Traspaso a sobregiro
+30|03|Abono traspaso Sdo de Otra Suc
+30|04|Salida Fideicomiso Bloq x fallec.
+30|05|Abono por traspaso automático
+30|06|Abono por cambio de producto
+30|07|Abono traspaso Sdo Cambio Sector
+30|09|Salida de Salvo Buen Cobro
+30|11|Depósito S.B.C 
+30|13|Depósito a Dirección General
+30|14|Bonificación por manejo de cuenta
+30|15|IVA 10% Bonificación por manejo de cta.
+30|16|IVA 15% Bonficación por manejo de cta.
+30|17|Traspaso Ctas Ahorros Dir Gral 137
+30|18|Abono por Trasp al 408 para 1316
+30|19|Abono por intereses de CPEsp.
+30|20|Bonificación por Cheque Devuelto
+30|21|Ope. Cruzada Bancomer Ent. 231190
+30|22|Abono Trasp. Cambio Uso Cta. 8
+39|00|Eliminación de abono
+40|00|Cargo ajuste ciclo anterior
+40|01|Pago de sobregiro
+40|03|Salida de retención del ISR
+40|04|Cgo. traspaso Sdo a otra sucursal
+40|05|Entrada fideicomiso Bloq x fallec.
+40|06|Cargo especial a 2101
+40|07|Cargo por traspaso automático
+40|08|Cargo por cambio de producto
+40|09|Retención de I.S.R.
+40|10|Cgo Traspaso Sdo Cambio Sector
+40|14|Salida Salvo buen cobro
+40|15|Retiro por compra-venta
+40|16|Cargo por Traspaso al S408 para 1316
+40|53|Comisión por cheque girado
+40|54|Iva comisión cheque girado 10% 
+40|55|Iva comisión cheque girado 15%
+40|56|Comisión por Banca Electrónica
+40|57|Iva Com por Banca Electrónica 10
+40|58|Iva Com por Banca Electrónica 15
+40|59|Comisión por apertura
+40|60|IVA Comisión por apertura 10%
+40|61|IVA Comisión por apertura 15%
+40|62|Situación  depós docto foráneo
+40|63|Iva Por situación depos doc forán 10
+40|64|Iva Por situación depos doc foran 15
+40|65|Comisión por aniversario
+40|66|IVA Comisión por aniversario 10% 
+40|67|IVA Comisión por aniversario 15%
+40|68|Comisión cheque devuelto Vent
+40|69|IVA Comisión cheque devuelto 10
+40|70|IVA Comisión cheque devuelto 15
+40|71|Comisión cheque sin fondos
+40|72|Iva Comisión cheq sin fondos 10
+40|73|Iva Comis cheque sin fondos 15
+40|74|Comisión por manejo de cuenta
+40|75|Iva Comis manejo de cuenta 10
+40|76|Iva Comis manejo de cuenta 15
+40|77|Intereses Devol Dep. firme de plaza
+40|78|Iva Ints Dev. Dep firme de plaza 10
+40|79|Iva Ints Dev. Dep. firme de plaza 15
+40|80|Intereses Gastos de cobranza
+40|81|IVA  Gastos Cobranza .10
+40|82|IVA  Gastos Cobranza .15
+40|83|Comisión consulta Edo cuenta
+40|84|IVA Com consulta Edo Cuenta 10
+40|85|IVA Com consulta Edo Cuenta 15
+40|86|Comisión por reposición Tarjeta por Robo o Ext.
+40|87|IVA Com rep.tarjeta por robo o ext reav 10%
+40|88|IVA Com rep.tarjeta por robo o ext reav 15%
+40|89|Inter. Devol. docto foráneo O.bcos
+40|90|IVA Int. Dev. docto foráneo/Bcos .10
+40|91|IVA Int. Dev. doc foráneo/Bcos .15
+40|92|Comis. retiro cajero permanente
+40|93|Iva Com retiro cajero perman. .10 
+40|94|Iva Com retiro cajero perman. .15
+40|95|Comisión retiro tarjeta ventanilla
+40|96|Iva Comis. ret. tarj. ventanilla 10
+40|97|Iva Comis. ret. tarj. ventanilla 15
+41|00|Comisión consulta de saldo
+41|01|Iva comisión consulta saldo 10%
+41|02|Iva comisión consulta saldo 15%
+41|03|Comis. por envío Edo. Cta a Suc.
+41|04|Iva Com. envío Edo. Cta.  Suc. 10
+41|05|Iva Com. envío Edo. Cta.  Suc. 15
+41|07|Comis. pendiente cheque girado
+41|08|Comis. pendiente Bca Electrónica 
+41|09|Comis. pendiente apertura
+41|10|Comis. pendiente aniversario
+41|11|Comis. pend. cheque devuelto
+41|12|Comis. pendiente manejo cuenta
+41|13|Comis. pendiente gtos cobranza
+41|14|Comis. pend Ret Tarj ventanilla
+41|15|Comis. pendiente Disp cajero Aut
+41|16|Com. pendiente Consulta Edo Cta
+41|17|Com. pend repos tarjeta X robo o extr
+41|18|Com. pendte chq Dev ventanilla
+41|19|Comisión pendte consulta Sdo
+41|20|Com pend. x envío Edo Cta a Suc
+41|21|Com. por Cheque Depos. en firme
+41|22|Iva com Cheque Depos. en firme 10
+41|23|Iva com Cheque Depos. en firme 15
+41|25|Com por prevención de Cheques
+41|26|Iva Com x prevención de chq. 10
+41|27|Iva Com x prevención de chq. 15
+41|28|Com pendte. Prevención de Chq.
+41|29|Com Consulta Movtos del día
+41|30|Iva Com Cons. Movtos del día 10
+41|31|Iva Com Cons. Movtos del día 15
+41|32|Com pendte. Cons. Mov del día
+41|33|Com x fotocopia de Edo de Cta.
+41|34|Iva com copia Edo Cuenta 10
+41|35|Iva com copia Edo Cuenta 15
+41|36|Com pend copia Edo Cuenta 
+41|37|Com x fotocopia otros comprobantes
+41|38|Iva com x fotocopia otros comprob 10
+41|39|Iva com x fotocopia otros comprob 15
+41|40|Com pend copia otros comprobantes
+41|41|Com por expedición de ch en ventanilla
+41|42|Iva com x expedir Ch en ventanilla 10
+41|43|Iva com x expedir Ch en ventanilla 15
+41|44|Com pend x expedición ch en ventanilla
+41|45|Com gen. de Edo Cta medios magnéticos
+41|46|Iva com gen E. Cta medios magnét. 10
+41|47|Iva com gen E. Cta medios magnét. 15
+41|48|Com pend gen ECta medios magnéticos 
+41|49|Com pend int x Devol Doc de la plaza
+41|50|Com pend int x Devol Doc fuera de plaza
+41|51|Comisión por disposición cajero de Red
+41|52|IVA 10% Bonificación por manejo de cta.
+41|53|IVA 15% Bonificación por manejo de cta.
+41|54|Comisión pendiente x disp.en cajero Red
+41|55|Comisión x Consulta de Saldo cajero Red
+41|56|IVA 10% de  Comisión x disp. cajero Red
+41|57|IVA15% de Comisión x disp. cajero Red
+41|58|Comisión Pendiente Consulta cajero Red
+41|59|Comisión x disp. Cajero Red para 342
+41|60|Comisión x Cons. Saldo Cajero Red p/342
+41|61|IVA 10% Comisiones Cajero Red p/342
+41|62|IVA 15% Comisiones Cajero Red p/342
+41|63|Cargo por disposición Cajero Red
+41|64|Cargo por consulta Cajero Red
+41|65|Cargo por IVA 10% Cajero Red
+41|66|Cargo por IVA 15% Cajero Red
+41|67|Reposición  de Tarjeta Adicional
+41|68|IVA 10% por Reposición de Tarj Adicional
+41|69|IVA 15% por Reposición de Tarj Adicional
+41|70|Com.Pend. De Com. Por Rep. de Tarj. Adic.
+41|71|Com Dispos. Efec.  En el extranjero
+41|72|IVA 10% Disp. Efec en el Extranjero
+41|73|IVA 15% Disp. Efec en el Extranjero
+41|74|Com Pend Disp Efec Extranjero
+41|75|Cargo Traspaso Uso Cta 8 
+50|00|Situación depósito documento foráneo
+51|00|Traspaso a cuenta
+51|01|Traspaso Ref.
+51|02|Pago a terceros
+51|03|Pago de servicio
+51|04|Orden de pago
+51|05|Pago interban
+51|06|Cargo Vía EDI
+51|07|Cargo global EDI
+51|08|Cargo global
+52|00|Cgo. Comisión manejo de cta.
+52|01|Comisión por apertura 
+52|02|Comisión por aniversario
+52|03|Comisión por cheque girado
+52|04|Comisión cheque sin fondos
+52|05|Comisión cheque devuelto Vent
+52|06|Comisión por manejo de cuenta
+52|07|Comis. retiro cajero permanente
+52|08|Comisión consulta de saldo
+53|00|IVA 10%
+53|01|IVA 10%
+53|02|IVA 15%
+54|00|Comisión cheque sin fondos
+55|00|Pago de sobregiro
+56|00|Pago adeudo sobregiro
+58|00|cargo especial a 2101
+59|01|Comis. pendiente apertura
+59|02|Comis. pendiente aniversario
+59|03|Comis. pendiente cheque girado
+59|04|Comisión pendiente cheque devuelto
+59|05|Comisión pendiente cheque dev. ventanill
+59|06|Comisión pendiente manejo de cuenta
+59|07|Comisión pendiente Dispos. cajero Aut
+59|08|Comisión pendiente consulta de Saldo
+59|09|Comis. pendiente club de precios
+60|00|Cargo Comisión Cheques girados
+60|66|Traspaso de cta b cero (con sello) 
+60|67|Fondeo cta concent ZBA (con sello) 
+60|68|Traspaso de cta b cero (sin sello)  
+60|69|Fondeo cta concent ZBA (sin sello) 
+61|12|Comision por dotacion
+61|13|Iva por servicio 543 iva com dot
+61|70|Fondeo a cta.balance cero (con sello) 
+61|71|Traspaso cta. conc ZBA (con sello) 
+61|72|Fondeo a cta. balance cero (sin sello) 
+61|73|Traspaso cta. conc ZBA (sin sello)  
+63|56|Comision por cheques prevenidos
+63|58|Iva prevencion comision de cheques 
+70|00|Int x Devol Docto Foráneo BMN
+71|00|Abono por traspaso
+71|01|Traspaso Ref 
+71|03|Pago vía EDI
+71|04|Pago recibido
+71|05|Abono global
+73|00|Intereses de capitalización
+75|00|Traspaso a sobregiro
+76|00|Sobregiro
+80|00|Situación depósito documento foráneo
+81|00|Inter. Devol. docto foráneo O.bcos
+83|00|Intereses Devol Dep. firme de plaza
+86|00|Cargo por cambio de producto
+87|00|Comisión cheque devuelto Vent
+89|00|Abono por cambio de producto
+90|00|Gastos de cobranza
+93|00|Comisión por pago de nómina
+94|00|Comisión por cheque depósito en firme

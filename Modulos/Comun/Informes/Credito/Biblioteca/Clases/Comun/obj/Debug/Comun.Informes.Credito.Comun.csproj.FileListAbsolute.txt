@@ -1,0 +1,5 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Credito\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Comun.Informes.Credito.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Credito\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Comun.Informes.Credito.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Credito\Biblioteca\Clases\Comun\obj\Debug\Comun.Informes.Credito.Comun.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Credito\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Comun.Informes.Credito.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Credito\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Comun.Informes.Credito.Comun.pdb

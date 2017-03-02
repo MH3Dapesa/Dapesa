@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Entidades\bin\Debug\Sistemas.Seguridad.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Entidades\bin\Debug\Sistemas.Seguridad.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Entidades\obj\Debug\Sistemas.Seguridad.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Entidades\obj\Debug\Sistemas.Seguridad.Entidades.pdb

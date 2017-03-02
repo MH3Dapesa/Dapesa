@@ -1,0 +1,1 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Biblioteca\Clases\Reglas\obj\Debug\Facturacion.Documentos.Reglas.csprojResolveAssemblyReference.cache

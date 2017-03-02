@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="Home"  description="Inicio">
+    <siteMapNode title="Ventas" description="Reportes Clientes">
+      <siteMapNode url="~/Clientes/TrajesMedida.aspx" title="Clientes descuentos adicionaes"  description="Reporte clientes con descuentos" />
+      <siteMapNode url="~/Clientes/AnalisisVentas.aspx" title="Analisis Ventas"  description="Reporte de Venta de un periodo" />
+	  <siteMapNode url="~/Clientes/AnalisisVentaCliente.aspx" title="Analisis Venta Clientes"  description="Reporte de Venta de un periodo por Cliente" />
+	  <siteMapNode url="~/Clientes/AnalisisVentasVendedor.aspx" title="Analisis Ventas Vendedor"  description="Reporte de Venta de un periodo por Vendedor" />
+      <siteMapNode url="~/Clientes/VendedorIdeal.aspx" title="Vendedor Ideal"  description="Reporte Vendedor Ideal Marcas" />
+      <siteMapNode url="~/Clientes/VentasMarcaLinea.aspx" title="Ventas Marca, Linea"  description="Reporte Ventas de Marca Por Linea" />
+      <siteMapNode url="~/Clientes/AnalisisItinerario.aspx" title="Analísis Itinerario"  description="Reporte Analísis Itinerario" />
+      <siteMapNode url="~/Clientes/ListaPrecios.aspx" title="Lista de precios"  description="Reporte lista de precios" />
+    <siteMapNode url="~/Clientes/BackOrderPedidos.aspx" title="BackOrderPedidos"  description="Reporte BackOrderPedidos" />
+    </siteMapNode>
+	  <siteMapNode title="Compras" description="Reportes Clientes">
+		  <siteMapNode url="~/Compras/VentasResumenPorMarca.aspx" title="Porcentaje de surtido por marca"  description="Resumen de ventas por marca" />
+	  </siteMapNode>
+  </siteMapNode>
+</siteMap>

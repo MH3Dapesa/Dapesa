@@ -1,0 +1,6 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Contabilidad\Aplicacion\Revaluacion\obj\Debug\Contabilidad.IU.Revaluacion.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Contabilidad\Aplicacion\Revaluacion\obj\Debug\Contabilidad.IU.Revaluacion.Contenedor.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Contabilidad\Aplicacion\Revaluacion\obj\Debug\Contabilidad.IU.Revaluacion.Contenido.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Contabilidad\Aplicacion\Revaluacion\obj\Debug\Contabilidad.IU.Revaluacion.InicioSesion.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Contabilidad\Aplicacion\Revaluacion\obj\Debug\Contabilidad.IU.Revaluacion.Properties.Resources.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Contabilidad\Aplicacion\Revaluacion\obj\Debug\Contabilidad.IU.Revaluacion.csproj.GenerateResource.Cache

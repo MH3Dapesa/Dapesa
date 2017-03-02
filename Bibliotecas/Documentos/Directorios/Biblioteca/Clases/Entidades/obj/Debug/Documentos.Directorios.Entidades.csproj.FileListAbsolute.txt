@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Documentos.Directorios.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Documentos.Directorios.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Documentos.Directorios.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Documentos.Directorios.Entidades.pdb

@@ -1,0 +1,7 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.XML.Reglas.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.XML.Reglas.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.XML.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.XML.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\obj\Debug\Documentos.XML.Reglas.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\obj\Debug\Dapesa.Documentos.XML.Reglas.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\obj\Debug\Dapesa.Documentos.XML.Reglas.pdb

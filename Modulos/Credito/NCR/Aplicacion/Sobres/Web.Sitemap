@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="~/Default.aspx" title="Home"  description="Inicio">
+		<siteMapNode url="~/Impresion.aspx" title="Impresión"  description="Impresión de sobres" />
+	</siteMapNode>
+</siteMap>

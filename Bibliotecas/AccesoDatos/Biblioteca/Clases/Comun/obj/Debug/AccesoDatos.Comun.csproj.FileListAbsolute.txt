@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Comun\bin\Debug\Dapesa.AccesoDatos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Comun\bin\Debug\Dapesa.AccesoDatos.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Comun\obj\Debug\Dapesa.AccesoDatos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Comun\obj\Debug\Dapesa.AccesoDatos.Comun.pdb

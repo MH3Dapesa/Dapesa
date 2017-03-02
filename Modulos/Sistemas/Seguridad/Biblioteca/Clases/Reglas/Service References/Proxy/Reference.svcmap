@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9ecc7de7-8e49-4339-92a5-be3aa6f37ed9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://192.168.0.192:3005/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="42177d03-c348-434b-804f-dd4fc795dba6" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f9455b9e-5f1a-4d9e-83eb-800d051c8b56" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="47c9865a-1f92-45fa-a6e9-1511468d37cf" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="Dapesa.Comun.Entidades.xsd" MetadataType="Schema" ID="fa8020b9-5106-49fd-b8b1-6c250a6b174b" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="Dapesa.Criptografia.Reglas.xsd" MetadataType="Schema" ID="b3dac98b-853d-43ec-b6b6-805cd86402a7" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="Dapesa.Criptografia.Comun.xsd" MetadataType="Schema" ID="c24fc3a8-e9a6-4f8c-96e5-18454cc42393" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="Dapesa.Comun.xsd" MetadataType="Schema" ID="b98a4c83-c0ab-4a6d-a153-75a7b68816af" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="Dapesa.AccesoDatos.Entidades.xsd" MetadataType="Schema" ID="9b88e951-377e-4eab-a94e-e67a33290eeb" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="27a8ea39-c637-4cb6-8f70-364bcb13d119" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+    <MetadataFile FileName="Dapesa.AccesoDatos.Comun.xsd" MetadataType="Schema" ID="dfedffd1-0357-45d9-b2b2-026f60e1479e" SourceId="1" SourceUrl="net.tcp://192.168.0.192:3005/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

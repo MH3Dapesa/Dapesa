@@ -1,0 +1,15 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Facturacion.Servicios.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Facturacion.Servicios.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comunicaciones.Mensajeria.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comun.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Criptografia.Reglas.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Criptografia.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comunicaciones.Mensajeria.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comun.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Criptografia.Reglas.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Criptografia.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\obj\Debug\Facturacion.Servicios.Entidades.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Facturacion.Servicios.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Facturacion.Servicios.Entidades.pdb

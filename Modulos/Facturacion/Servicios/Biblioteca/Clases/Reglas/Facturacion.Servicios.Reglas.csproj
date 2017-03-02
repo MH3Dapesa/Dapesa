@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C27DBAC-D37D-44E2-9F2F-D98D85EC5A69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dapesa.Facturacion.Servicios.Reglas</RootNamespace>
+    <AssemblyName>Dapesa.Facturacion.Servicios.Reglas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Diagnostico.cs" />
+    <Compile Include="IDiagnostico.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Comunicaciones\Mensajeria\Biblioteca\Clases\Entidades\Comunicaciones.Mensajeria.Entidades.csproj">
+      <Project>{92b2b90b-675e-4543-948b-69191c24a6b1}</Project>
+      <Name>Comunicaciones.Mensajeria.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Comunicaciones\Mensajeria\Biblioteca\Clases\Reglas\Comunicaciones.Mensajeria.Reglas.csproj">
+      <Project>{8dcde1e3-3973-4a77-8e8b-1a2cd779972f}</Project>
+      <Name>Comunicaciones.Mensajeria.Reglas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Comun\Documentos.Directorios.Comun.csproj">
+      <Project>{f6b49e73-3401-4ec1-a385-c99c3dd913ec}</Project>
+      <Name>Documentos.Directorios.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\Documentos.Directorios.Reglas.csproj">
+      <Project>{c7587f2d-79ba-4776-9df8-e2776d1328d8}</Project>
+      <Name>Documentos.Directorios.Reglas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Documentos\XML\Biblioteca\Clases\Comun\Documentos.XML.Comun.csproj">
+      <Project>{dba08ac3-a230-44fc-9308-e575420fca5b}</Project>
+      <Name>Documentos.XML.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Documentos\XML\Biblioteca\Clases\Reglas\Documentos.XML.Reglas.csproj">
+      <Project>{41adc122-fe90-45a4-b9ad-3c750f2d8d1d}</Project>
+      <Name>Documentos.XML.Reglas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comun\Facturacion.Servicios.Comun.csproj">
+      <Project>{dc3492db-b49c-4801-a9d4-9c6f04714ff8}</Project>
+      <Name>Facturacion.Servicios.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Facturacion.Servicios.Entidades.csproj">
+      <Project>{8e5ed89b-88e2-4f21-a35b-8bcca58b228b}</Project>
+      <Name>Facturacion.Servicios.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

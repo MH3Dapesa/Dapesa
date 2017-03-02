@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Facturacion.Servicios.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Facturacion.Servicios.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Facturacion.Servicios.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Servicios\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Facturacion.Servicios.Comun.pdb

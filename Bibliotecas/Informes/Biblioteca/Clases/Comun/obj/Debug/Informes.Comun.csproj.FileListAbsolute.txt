@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Informes.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Informes.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Informes.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Informes.Comun.pdb

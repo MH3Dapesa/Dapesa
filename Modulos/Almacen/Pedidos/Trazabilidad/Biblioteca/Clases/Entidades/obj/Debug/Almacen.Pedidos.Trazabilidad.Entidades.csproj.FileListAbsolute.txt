@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Trazabilidad\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Almacen.Pedidos.Trazabilidad.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Trazabilidad\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Almacen.Pedidos.Trazabilidad.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Trazabilidad\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Almacen.Pedidos.Trazabilidad.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Trazabilidad\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Almacen.Pedidos.Trazabilidad.Entidades.pdb

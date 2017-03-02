@@ -1,0 +1,8 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Facturacion.Documentos.IU.EmisionFacturas.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Dapesa.Facturacion.Documentos.IU.EmisionFacturas.Contenedor.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Dapesa.Facturacion.Documentos.IU.EmisionFacturas.Contenido.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Dapesa.Facturacion.Documentos.IU.EmisionFacturas.Informe.Factura.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Dapesa.Facturacion.Documentos.IU.EmisionFacturas.InicioSesion.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Dapesa.Facturacion.Documentos.IU.EmisionFacturas.Properties.Resources.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Facturacion.Documentos.IU.EmisionFacturas.csproj.GenerateResource.Cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Facturacion\Documentos\Aplicacion\EmisionFacturas\obj\Debug\Dapesa.Facturacion.Documentos.IU.EmisionFacturas.exe.licenses

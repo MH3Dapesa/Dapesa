@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Comun" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Comun" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Definiciones.TipoCifrado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AES" />
+      <xs:enumeration value="MD5" />
+      <xs:enumeration value="SHA1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Definiciones.TipoCifrado" nillable="true" type="tns:Definiciones.TipoCifrado" />
+</xs:schema>

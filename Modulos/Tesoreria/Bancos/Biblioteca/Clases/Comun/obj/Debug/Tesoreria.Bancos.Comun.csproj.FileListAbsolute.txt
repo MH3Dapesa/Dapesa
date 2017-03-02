@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Tesoreria\Bancos\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Tesoreria.Bancos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Tesoreria\Bancos\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Tesoreria.Bancos.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Tesoreria\Bancos\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Tesoreria.Bancos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Tesoreria\Bancos\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Tesoreria.Bancos.Comun.pdb

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dapesa.Comun.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dapesa.Comun.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Dapesa.Comun" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Reglas" />
+  <xs:complexType name="Conexion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseDatos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Credenciales" nillable="true" type="tns:Credenciales" />
+      <xs:element minOccurs="0" name="IdServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Puerto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servidor" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dapesa.Comun" minOccurs="0" name="Tipo" type="q1:Definiciones.TipoConexion" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dapesa.Comun" minOccurs="0" name="TipoCliente" type="q2:Definiciones.TipoCliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Conexion" nillable="true" type="tns:Conexion" />
+  <xs:complexType name="Credenciales">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Reglas" minOccurs="0" name="Cifrado" nillable="true" type="q3:Cifrado" />
+      <xs:element minOccurs="0" name="Contrasenia" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Credenciales" nillable="true" type="tns:Credenciales" />
+</xs:schema>

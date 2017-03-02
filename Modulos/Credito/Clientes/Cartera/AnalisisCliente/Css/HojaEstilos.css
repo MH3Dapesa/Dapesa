@@ -1,0 +1,98 @@
+﻿body {
+	font-family: arial;
+	font-size: 8pt;
+   
+   /*background: rgba(227,227,227,0.90);*/
+    
+
+}
+	.centered {
+		left: 0px;
+		position: fixed;
+		-moz-transform: translate(-50%);
+		-ms-transform: translate(-50%);
+		-o-transform: translate(-50%);
+		-webkit-transform: translate(-50%);
+		transform: translateY(-50%);
+		text-align: center;
+		top: 50%;
+		width: 100%;
+	}
+	.entireScreen {
+		bottom: 0px;
+		left: 0px;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		position: fixed;
+		right: 0px;
+		top: 0px;
+	}
+	.navigation a {
+		background: whiteSmoke;
+		border-right: 1px solid rgba(0, 0, 0, .3);
+		color: #000;
+		padding: 4pt 10pt;
+		text-decoration: none;
+	}
+		.navigation a:hover {
+			background: gainsboro;
+		}
+		.navigation a img {
+			height: 11.5px;
+			padding-right: 5px;
+			width: 11.5px;
+		}
+	.navigation li {
+		display: block;
+		float: left;
+	}
+		.navigation li:first-child a {
+			border-radius: 4px 0 0 4px;
+		}
+		.navigation li:hover ul {
+			background: gainsboro;
+			border-radius: 4px 0 0 4px;
+			display: block;
+			margin-top: 10.5px;
+			position: absolute;
+		}
+		.navigation li:last-child a {
+			border-right: 0;
+			border-radius: 0 4px 4px 0;
+		}
+		.navigation li ul {
+			display: none;
+		}
+			.navigation li ul li {
+				float: none;
+				padding-bottom: 10px;
+			}
+			.navigation li ul li a {
+				background: gainsboro;
+				text-decoration: underline;
+			}
+				.navigation li ul li a:hover {
+					color: dodgerBlue;
+					cursor: pointer;
+				}
+	.navigation ul {
+		font: normal 9pt arial;
+		margin: 0;
+		padding: 0;
+	}
+	.preloader {
+		background-color: WhiteSmoke;
+		filter: alpha(opacity=10);
+		opacity: 0.01;
+		z-index: 1001;
+	}
+	.updateProgressBackground {
+		background-color: #000000;
+		filter: alpha(opacity=18);
+		opacity: 0.15;
+		z-index: 1000;
+	}
+	.upperText {
+		text-transform: uppercase;
+	}

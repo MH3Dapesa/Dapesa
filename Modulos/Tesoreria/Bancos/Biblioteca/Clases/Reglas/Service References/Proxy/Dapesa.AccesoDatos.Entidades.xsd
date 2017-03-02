@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Entidades" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Entidades" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Comun" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+  <xs:complexType name="ArrayOfSentencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sentencia" nillable="true" type="tns:Sentencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSentencia" nillable="true" type="tns:ArrayOfSentencia" />
+  <xs:complexType name="Sentencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Parametros" nillable="true" type="tns:ArrayOfParametro" />
+      <xs:element minOccurs="0" name="TextoComando" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Comun" minOccurs="0" name="Tipo" type="q1:Definiciones.TipoSentencia" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="TipoComando" type="q2:CommandType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Comun" minOccurs="0" name="TipoManejadorTransaccion" type="q3:Definiciones.TipoManejadorTransaccion" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Comun" minOccurs="0" name="TipoResultado" type="q4:Definiciones.TipoResultado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sentencia" nillable="true" type="tns:Sentencia" />
+  <xs:complexType name="ArrayOfParametro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parametro" nillable="true" type="tns:Parametro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParametro" nillable="true" type="tns:ArrayOfParametro" />
+  <xs:complexType name="Parametro">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="Direccion" type="q5:ParameterDirection" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="Tipo" type="q6:DbType" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Parametro" nillable="true" type="tns:Parametro" />
+</xs:schema>

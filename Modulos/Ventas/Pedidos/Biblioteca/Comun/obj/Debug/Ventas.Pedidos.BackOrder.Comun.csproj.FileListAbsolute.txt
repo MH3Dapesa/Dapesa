@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Biblioteca\Comun\bin\Debug\Ventas.Pedidos.BackOrder.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Biblioteca\Comun\bin\Debug\Ventas.Pedidos.BackOrder.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Biblioteca\Comun\obj\Debug\Ventas.Pedidos.BackOrder.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Biblioteca\Comun\obj\Debug\Ventas.Pedidos.BackOrder.Comun.pdb

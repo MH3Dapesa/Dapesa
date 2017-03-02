@@ -1,0 +1,7 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Informes.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Informes.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Informes.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Informes.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Entidades\obj\Debug\Informes.Entidades.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Informes.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Informes\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Informes.Entidades.pdb

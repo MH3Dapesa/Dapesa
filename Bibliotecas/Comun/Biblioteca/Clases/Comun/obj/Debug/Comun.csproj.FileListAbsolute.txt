@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comun\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comun\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comun\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comun\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Comun.pdb

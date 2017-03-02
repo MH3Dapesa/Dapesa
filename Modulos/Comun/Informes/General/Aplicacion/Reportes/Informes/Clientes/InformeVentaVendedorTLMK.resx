@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="DataSourceVentaVendTLMK.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>   WITH VENTA AS(
+SELECT * FROM (
+    SELECT 
+        VENDEDOR CVE_VENDEDOR,
+        NOMBRE_VENDEDOR,
+        MES,
+        SUBPIEZAS_VENDEDOR,
+        SUBTOTAL_VENDEDOR,
+        SUBPIEZAS_TLMK,
+        SUBTOTAL_TLMK,
+        PIEZAS_VENDEDOR,
+        NVL(VENTA_VENDEDOR,0) VENTA_VENDEDOR,
+        PIEZAS_TLMK,
+        NVL(VENTA_TLMK,0) VENTA_TLMK
+    FROM (
+          SELECT 
+              P.VENDEDOR,
+              NOMBRE_VENDEDOR,
+              SUM(PIEZAS_VENDEDOR) OVER(PARTITION BY CVE_VENDEDOR) SUBPIEZAS_VENDEDOR,
+              SUM(VENTA_VENDEDOR) OVER(PARTITION BY CVE_VENDEDOR) SUBTOTAL_VENDEDOR,
+              SUM(PIEZAS_TLMK) OVER(PARTITION BY CVE_VENDEDOR) SUBPIEZAS_TLMK,
+              SUM(VENTA_TLMK) OVER(PARTITION BY CVE_VENDEDOR) SUBTOTAL_TLMK,
+              VENTA.* 
+          FROM  (SELECT P.VENDEDOR, UPPER(P.NOMBRE||DECODE(P.NOMBRE2,NULL,' ',' '||P.NOMBRE2||' ')||P.APELLIDO_PATERNO||DECODE(P.APELLIDO_MATERNO,NULL,'',' '||P.APELLIDO_MATERNO)) NOMBRE_VENDEDOR FROM PERSONAL P WHERE P.PUE_CLAVE=22 AND P.STATUS='A' AND P.CLAVE IN(SELECT PERS_CLAVE FROM PERSONAL_SUCURSALES WHERE SUC_CLAVE=1)) P
+          LEFT JOIN (
+              SELECT 
+                  CVE_VENDEDOR, 
+                  MES, 
+                  SUM(PIEZAS) PIEZAS,
+                  SUM(IMPORTE) IMPORTE, 
+                  SUM(CASE  WHEN SERIE_VENDEDOR='V' THEN PIEZAS ELSE 0 END) PIEZAS_VENDEDOR,
+                  SUM(CASE  WHEN SERIE_VENDEDOR='V' THEN IMPORTE ELSE 0 END) VENTA_VENDEDOR, 
+                  SUM(CASE  WHEN SERIE_VENDEDOR='T' THEN PIEZAS ELSE 0 END) PIEZAS_TLMK,
+                  SUM(CASE  WHEN SERIE_VENDEDOR='T' THEN IMPORTE ELSE 0 END) VENTA_TLMK  
+              FROM (
+                    SELECT 
+                        CVE_VENDEDOR, 
+                        VEND_CLAVE, 
+                        MES, 
+                        SUM(NVL(ART_CANTIDAD,0)) PIEZAS,
+                        SUM(NVL(IMPORTE,0)) IMPORTE, 
+                        DECODE(VEND_CLAVE,CVE_VENDEDOR,'V', CVE_VENDEDOR+200,'V', 'T') SERIE_VENDEDOR 
+                    FROM (
+                          SELECT 
+                              FE.VEND_CLAVE,
+                              (SELECT VEND_CLAVE FROM CLIENTES WHERE CLAVE= FE.CLI_CLAVE) CVE_VENDEDOR,
+                              TO_CHAR(FE.FECHA,'MM/YYYY') MES,
+                              SUM(NVL(DFE.CANTIDAD,0)) ART_CANTIDAD, 
+                              SUM(DFE.PRECIO*DFE.CANTIDAD) IMPORTE
+                          FROM DETALLES_FACTURAS_EMITIDAS DFE, FACTURAS_EMITIDAS FE 
+                          WHERE 
+                              FE.FOLFAC_FOLIO=DFE.FACT_EM_FOLFAC_FOLIO 
+                              AND FE.NUMERO=DFE.FACT_EM_NUMERO 
+                              AND DFE.ART_CLAVE &lt;&gt; 'SEGURO' 
+                              AND FE.STATUS_CAN='N' 
+                              AND FE.CLI_CLAVE IN (SELECT CLAVE FROM CLIENTES C WHERE C.CLAVE = NVL(NULL,C.CLAVE)  AND C.VEND_CLAVE = NVL(NULL,C.VEND_CLAVE) AND C.CLAVE IN (SELECT CLI_CLAVE FROM SUC_CLIENTES WHERE SUC_CLAVE =1 AND UTILIZAR='S' AND VER='S'))
+                              AND TRUNC(FE.FECHA) BETWEEN TRUNC(to_date('01/01/2016','DD/MM/YYYY')) AND TRUNC(to_date('30/09/2016','DD/MM/YYYY'))
+                              AND  DFE.ART_CLAVE IN(
+                                        SELECT CLAVE FROM ARTICULOS A WHERE 
+                                        A.MCA_CLAVE = NVL(null,A.MCA_CLAVE) 
+                                        AND A.LIN_ART_CLAVE = NVL(null,A.LIN_ART_CLAVE)
+                                        AND A.CLAVE = NVL(null,A.CLAVE)
+                                        )
+                          GROUP BY FE.CLI_CLAVE, FE.VEND_CLAVE,TO_CHAR(FE.FECHA,'MM/YYYY')
+                          UNION ALL
+                          SELECT 
+                                NC.VEND_CLAVE,
+                                (SELECT VEND_CLAVE FROM CLIENTES WHERE CLAVE= NC.CLI_CLAVE) CVE_VENDEDOR,
+                                TO_CHAR(NC.FECHA,'MM/YYYY') MES,
+                                SUM(NVL(DNC.CANTIDAD,0)*-1) ART_CANTIDAD,
+                                SUM(DNC.PRECIO*DNC.CANTIDAD)*-1 IMPORTE
+                          FROM DETALLES_NOTAS_CREDITO_AL_CTE DNC,NOTAS_CREDITO_AL_CTE NC 
+                          WHERE 
+                                DNC.NCR_AL_CTE_FOL_NCR_CT_FOLIO=NC.FOL_NCR_CT_FOLIO 
+                                AND DNC.NCR_AL_CTE_NUMERO = NC.NUMERO  
+                                AND TRUNC(NC.FECHA) BETWEEN TRUNC(to_date('01/01/2016','DD/MM/YYYY')) AND TRUNC(to_date('30/09/2016','DD/MM/YYYY'))
+                                AND  NC.TIPO IS NULL 
+                                AND NC.STATUS_CAN='N' 
+                                AND NC.CLI_CLAVE IN (SELECT CLAVE FROM CLIENTES C WHERE C.CLAVE = NVL(NULL,C.CLAVE)  AND C.VEND_CLAVE = NVL(NULL,C.VEND_CLAVE) AND C.CLAVE IN (SELECT CLI_CLAVE FROM SUC_CLIENTES WHERE SUC_CLAVE =1 AND UTILIZAR='S' AND VER='S'))
+                                AND (NC.CONC_NOT_CLAVE=5 OR NC.CONC_NOT_CLAVE = 19  OR NC.CONC_NOT_CLAVE = 20 OR NC.CONC_NOT_CLAVE = 21 OR NC.CONC_NOT_CLAVE = 34 )
+                                AND  DNC.ART_CLAVE IN(
+                                              SELECT CLAVE FROM ARTICULOS A WHERE 
+                                              A.MCA_CLAVE = NVL(NULL,A.MCA_CLAVE) 
+                                              AND A.LIN_ART_CLAVE = NVL(NULL,A.LIN_ART_CLAVE)
+                                              AND A.CLAVE = NVL(NULL,A.CLAVE)
+                                              )
+                          GROUP BY  NC.CLI_CLAVE, NC.VEND_CLAVE,TO_CHAR(NC.FECHA,'MM/YYYY')
+                        )GROUP BY  CVE_VENDEDOR, VEND_CLAVE, MES
+                  ) VENTA
+              GROUP BY CVE_VENDEDOR, MES
+          )VENTA
+          ON P.VENDEDOR = VENTA.CVE_VENDEDOR
+        ) 
+      )
+  PIVOT xml
+            (
+              SUM(PIEZAS_VENDEDOR) PIEZAS_VENDEDOR,
+              SUM(NVL(VENTA_VENDEDOR,0)) VENTA_VENDEDOR,
+              SUM(PIEZAS_TLMK) PIEZAS_TLMK,
+              SUM(NVL(VENTA_TLMK,0)) VENTA_TLMK
+              FOR MES in (SELECT TO_CHAR(ADD_MONTHS(TO_DATE('01/01/2016','DD/MM/YYYY'),LPAD( X-1, 2, '0' )),'MM/YYYY') MESANIO FROM ( SELECT ROWNUM x /*+ INDEX( CBRA )*/ FROM DUAL CONNECT BY LEVEL&lt;=MONTHS_BETWEEN( sysdate, add_months(sysdate,-12))))
+            )
+ )
+  SELECT 
+      CVE_VENDEDOR,
+      NOMBRE_VENDEDOR,
+      SUBPIEZAS_VENDEDOR + SUBPIEZAS_TLMK SUBPIEZAS,
+      SUBTOTAL_VENDEDOR + SUBTOTAL_TLMK SUBTOTAL,
+      SUBPIEZAS_VENDEDOR,
+      SUBTOTAL_VENDEDOR,
+      SUBPIEZAS_TLMK,
+      SUBTOTAL_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[1]/column[2]')) MES1_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[1]/column[3]')) MES1_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[1]/column[4]')) MES1_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[1]/column[5]')) MES1_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[2]/column[2]')) MES2_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[2]/column[3]')) MES2_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[2]/column[4]')) MES2_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[2]/column[5]')) MES2_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[3]/column[2]')) MES3_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[3]/column[3]')) MES3_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[3]/column[4]')) MES3_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[3]/column[5]')) MES3_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[4]/column[2]')) MES4_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[4]/column[3]')) MES4_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[4]/column[4]')) MES4_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[4]/column[5]')) MES4_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[5]/column[2]')) MES5_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[5]/column[3]')) MES5_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[5]/column[4]')) MES5_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[5]/column[5]')) MES5_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[6]/column[2]')) MES6_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[6]/column[3]')) MES6_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[6]/column[4]')) MES6_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[6]/column[5]')) MES6_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[7]/column[2]')) MES7_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[7]/column[3]')) MES7_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[7]/column[4]')) MES7_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[7]/column[5]')) MES7_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[8]/column[2]')) MES8_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[8]/column[3]')) MES8_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[8]/column[4]')) MES8_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[8]/column[5]')) MES8_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[9]/column[2]')) MES9_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[9]/column[3]')) MES9_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[9]/column[4]')) MES9_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[9]/column[5]')) MES9_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[10]/column[2]')) MES10_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[10]/column[3]')) MES10_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[10]/column[4]')) MES10_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[10]/column[5]')) MES10_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[11]/column[2]')) MES11_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[11]/column[3]')) MES11_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[11]/column[4]')) MES11_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[11]/column[5]')) MES11_IMP_TLMK,
+      TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[12]/column[2]')) MES12_PZAS_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[12]/column[3]')) MES12_IMP_VENDEDOR, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[12]/column[4]')) MES12_PZAS_TLMK, TO_NUMBER(extractvalue(MES_xml,'/PivotSet/item[12]/column[5]')) MES12_IMP_TLMK
+  FROM VENTA
+</value>
+  </data>
+  <data name="DataSourceVentaVendTLMK.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iRGF0YVNvdXJjZVZlbnRhVmVuZFRMTUsiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iQ1ZFX1ZFTkRFRE9SIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iTk9NQlJFX1ZFTkRFRE9SIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNVQlBJRVpBUyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iU1VCVE9UQUwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlNVQlBJRVpBU19WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iU1VCVE9UQUxfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlNVQlBJRVpBU19UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJTVUJUT1RBTF9UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMxX1BaQVNfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzFfSU1QX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMxX1BaQVNfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTMV9JTVBfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTMl9QWkFTX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMyX0lNUF9WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTMl9QWkFTX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzJfSU1QX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzNfUFpBU19WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTM19JTVBfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzNfUFpBU19UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMzX0lNUF9UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM0X1BaQVNfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzRfSU1QX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM0X1BaQVNfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTNF9JTVBfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTNV9QWkFTX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM1X0lNUF9WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTNV9QWkFTX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzVfSU1QX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzZfUFpBU19WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTNl9JTVBfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzZfUFpBU19UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM2X0lNUF9UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM3X1BaQVNfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzdfSU1QX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM3X1BaQVNfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTN19JTVBfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTOF9QWkFTX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM4X0lNUF9WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTOF9QWkFTX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzhfSU1QX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzlfUFpBU19WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTOV9JTVBfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzlfUFpBU19UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVM5X0lNUF9UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMxMF9QWkFTX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMxMF9JTVBfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzEwX1BaQVNfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTMTBfSU1QX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzExX1BaQVNfVkVOREVET1IiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzExX0lNUF9WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTMTFfUFpBU19UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMxMV9JTVBfVExNSyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTMTJfUFpBU19WRU5ERURPUiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTUVTMTJfSU1QX1ZFTkRFRE9SIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNRVMxMl9QWkFTX1RMTUsiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1FUzEyX0lNUF9UTE1LIiBUeXBlPSJEZWNpbWFsIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+</root>

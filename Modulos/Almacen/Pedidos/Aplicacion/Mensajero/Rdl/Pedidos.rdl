@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="tblPedidos">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.8cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.7cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>7.3cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.2cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.8cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.2cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.3cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>20cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtFila">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>#</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtVendedor">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>VEND</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>N° CLIENTE</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtCliente">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>CLIENTE</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtPedido">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>PEDIDO</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtTransportista">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>TRANSPORTISTA</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtCondicion">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>CONDICIÓN</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtEstatus">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>AUTORIZACIÓN</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtFecha">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>FECHA</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtRenglones">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>RENG</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="txtObservaciones">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>OBSERVACIONES</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>9pt</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>DarkSlateBlue</BackgroundColor>
+                        <PaddingLeft>20pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ROWNUM">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=RunningValue(1,Sum,"dsPedidos")</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ROWNUM</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="VENDEDOR">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!VENDEDOR.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>VENDEDOR</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CLAVE">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CLAVE.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CLAVE</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CLIENTE">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CLIENTE.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CLIENTE</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="FOLIO_PEDIDO">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!FOLIO.Value &amp; "-" &amp; Fields!NUMERO.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TRANSPORTISTA">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TRANSPORTISTA.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TRANSPORTISTA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CONDICION">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=IIf(Fields!CONDICION.Value=1, "CONTADO", "CRÉDITO")</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CONDICION</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="AUTORIZACION">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Switch(Fields!ORDEN.Value=0,"N/A",Fields!ORDEN.Value=1,"POR FACTURAR",Fields!ORDEN.Value=2,"POR AUTORIZAR VENTAS",Fields!ORDEN.Value=3,"POR AUTORIZAR CxC")</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>AUTORIZACION</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="FECHA">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!FECHA.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Format>dd/MM/yyyy HH:mm:ss</Format>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>FECHA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="RENGLONES">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!RENGLONES.Value</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>RENGLONES</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="OBSERVACIONES">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Code.EliminaRetornos(Fields!OBSERVACIONES.Value)</Value>
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                                <Color>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"Black",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"White",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Black",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Black",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"Black",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"Black",
+						"Black"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <LineHeight>=IIF(
+Len(Fields!OBSERVACIONES.Value)&gt;=92
+,"20pt","9pt")</LineHeight>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>OBSERVACIONES</rd:DefaultName>
+                      <ToolTip>=Fields!OBSERVACIONES.Value</ToolTip>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=IIF(
+	Fields!EXISTENCIA.Value=0,
+	"LightBlue",
+	IIf(
+		InStr(Fields!TRANSPORTISTA.Value,"BACK")&gt;0 Or Fields!ORDEN.Value=3,
+		"#d33739",
+		IIf(
+			Fields!ORDEN.Value=2,
+			"Yellow",
+			IIf(
+				Fields!SUC_CLAVE.Value=3 And (InStr(Fields!CLIENTE.Value,"MOSTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"MOSTR")&gt;0),
+				"Orange",
+				IIf(
+					Fields!SUC_CLAVE.Value=3 And InStr(Fields!TRANSPORTISTA.Value,"MOTO")&gt;0,
+					"LightGreen",
+					IIf(
+						InStr(Fields!TRANSPORTISTA.Value,"NUESTR")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CAMIONETA")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"CONTAD")&gt;0 Or InStr(Fields!TRANSPORTISTA.Value,"COTIZ")&gt;0,
+						"White",
+						"LightGreen"
+					)
+				)
+			)
+		)
+	)
+)
+'SEMAFORO: 
+'   1. SI NO HAY EXISTENCIA... AZUL
+'   2. SI EL TRANSPORTISTA CONTIENE 'BACK' (ES DECIR, ES BACKORDER) O 
+'      EL ESTATUS DE AUTORIZACIÓN ES 'N' (POR AUTORIZAR CxC)... ROJO
+'   3. SI EL ESTATUS DE AUTORIZACION ES 'G' (POR AUTORIZAR VENTAS)... AMARILLO
+'   4. SI EL TRASPORTISTA CONTIENE 'NUESTR' O CONTIENE 'CAMIONETA' (ES DECIR, 'NUESTRA CAMIONETA') O
+'      ES UN CLIENTE DE CONTADO O ES UNA COTIZACIÓN... BLANCO
+'   5. TODO LO DEMÁS... VERDE
+'
+'CAMBIOS PEDIDOS POR MÉXICO: COLOR NARANJA PARA CLIENTE MOSTRADOR Y MOTO EXPRESS, VERDE</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <FixedData>true</FixedData>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Detalles" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <KeepTogether>true</KeepTogether>
+        <NoRowsMessage>=vbTab &amp; "No hay registros que correspondan con los parámetros de búsqueda suministrados."</NoRowsMessage>
+        <DataSetName>dsPedidos</DataSetName>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=IIf(Fields!EXISTENCIA.Value=0,0,1)</Value>
+            <Direction>Descending</Direction>
+          </SortExpression>
+          <SortExpression>
+            <Value>=Fields!ORDEN.Value</Value>
+          </SortExpression>
+          <SortExpression>
+            <Value>=Fields!GESTOR.Value</Value>
+          </SortExpression>
+          <SortExpression>
+            <Value>=Fields!NUMERO.Value</Value>
+          </SortExpression>
+        </SortExpressions>
+        <Height>1.2cm</Height>
+        <Width>50.3cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <FontSize>9pt</FontSize>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>1.2cm</Height>
+    <Style />
+  </Body>
+  <Width>50.3cm</Width>
+  <Page>
+    <PageHeight>21.59cm</PageHeight>
+    <PageWidth>39cm</PageWidth>
+    <InteractiveHeight>21.59cm</InteractiveHeight>
+    <InteractiveWidth>39cm</InteractiveWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="dsSIIL">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=VESIS06\SQLEXPRESS;Initial Catalog=Northwind</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>0dd1ab81-5eb5-4b5e-b01c-7e714a7c1ac1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsPedidos">
+      <Query>
+        <DataSourceName>dsSIIL</DataSourceName>
+        <CommandText>SELECT
+	1 AS SUC_CLAVE,
+	'F' AS FOLIO,
+	577086 AS NUMERO,
+	GETDATE() AS FECHA,
+	'11659' AS CLAVE,
+	'JULIO CESAR AGUILAR' AS CLIENTE,
+	132 AS VENDEDOR,
+	132 AS GESTOR,
+	'' AS RUTA,
+	2 AS CONDICION,
+	'*****BACK ORDER*****' AS TRANSPORTISTA,
+	'S' AS AUTORIZACION,
+	2 AS RENGLONES,
+	0 AS EXISTENCIA,
+	'' AS OBSERVACIONES,
+	0 AS ORDEN,
+	1 AS INDICE
+UNION
+SELECT
+	2 AS ROWNUM,
+	'F' AS FOLIO,
+	577079 AS NUMERO,
+	GETDATE() AS FECHA,
+	'6338' AS CLAVE,
+	'LA CASA DEL RETEN S.A. DE' AS CLIENTE,
+	45 AS VENDEDOR,
+	45 AS GESTOR,
+	NULL AS RUTA,
+	2 AS CONDICION,
+	'  BACK ORDER  -*/*' AS TRANSPORTISTA,
+	'N' AS AUTORIZACION,
+	1 AS RENGLONES,
+	1 AS EXISTENCIA,
+	NULL AS OBSERVACIONES,
+	3 AS ORDEN,
+	1 AS INDICE
+UNION
+SELECT 1, 'A',547405,GETDATE(),'MOS47','CLIENTE MOSTRADOR 47',47,47,NULL,1,'CONTADO NUESTRO','N',90,65737,'FAVOR DE COTIZAR CON EL 10% DE DESC.AL SR.CLETO LOBATON ANDRADE  7711153047 FAVOR DE PASAR COTIZACION GRACIAS PEDIDO CON FACTURA.RFC LOAC-720426-KS9 CURP 720426HHGBNL04 DOM.1 DE MAYO S/N C.P. 42280 CHAPULHUACAN HGO.',3,0 UNION
+SELECT 2, 'A',547437,GETDATE(),'MOS47','CLIENTE MOSTRADOR 47',47,47,NULL,1,'NUESTRO','N',27,60151,'mismo cliente sr cleto lobaton chapulhuacan hgo. FAVOR DE MANDAR PUBLICIDAD SR VENTURA. COTIZAR CON EL 10% DESC.',3,0 UNION
+SELECT 3, 'A',547475,GETDATE(),'8519','KARINA DIANELY MEDINA VIL',128,28,'13.071',12,'NUESTRA CAMIONETA','N',7,20323,'',3,0 UNION
+SELECT 4, 'A',547406,GETDATE(),'MOS47','CLIENTE MOSTRADOR 47',47,47,NULL,1,'CONTADO NUESTRO','N',83,19948,'FAVOR DE COTIZAR CON EL 10% DE DESC. AL SR. CLETO LOBATON ANDRADE TEL.CEL 7711153047 CHAPULHUACAN HGO.',3,0 UNION
+SELECT 3, 'A',547254,GETDATE(),'12860','ALBERTO HERNANDEZ RIVAS',147,47,NULL,1,'AFIMEX CONTADO','N',11,8166,'',3,0 UNION
+SELECT 3, 'A',547326,GETDATE(),'11808','MARINA ASCANIO COBOS',106,6,NULL,1,'CONTADO CORPORATIVA ','N',15,5463,'PEDIDO DE CONTADO PASAR IMPORTE A JAZMIN XFA',3,0 UNION
+SELECT 3, 'A',547155,GETDATE(),'12077','HIDRAEL TORRES SERRANO',63,63,NULL,2,'CORPORATIVA EXPRESS','N',20,5001,'',3,0 UNION
+SELECT 3, 'A',547316,GETDATE(),'12933','ELVIA LOPEZ LOPEZ',23,23,NULL,1,'CONTADO ESTAFETA DIA','N',7,3943,'OCURRE OAXACA CON ATENCION A ESAU MARTINES DOMINGUEZ',3,0 UNION
+SELECT 3, 'A',547459,GETDATE(),'3932','JUAN GERARDO ARGUELLO GUI',112,12,NULL,2,'AEROFLASH','N',11,1289,'',3,0 UNION
+SELECT 3, 'A',547156,GETDATE(),'12077','HIDRAEL TORRES SERRANO',63,63,NULL,2,'CORPORATIVA EXPRESS','N',4,282,'',3,0 UNION
+SELECT 3, 'A',547473,GETDATE(),'4168','MARTHA PEREZ MAGDALENO',129,29,NULL,8,'NUESTRA CAMIONETA','S',5,184,'',1,0 UNION
+SELECT 3, 'A',547354,GETDATE(),'12963','ANTONIO BONIFACIO ALDUCIN',17,17,NULL,13,'CORPORATIVA EXPRESS','S',1,74,'',1,0 UNION
+SELECT 3, 'A',547154,GETDATE(),'12077','HIDRAEL TORRES SERRANO',63,63,NULL,2,'MOTO EXPRESS','N',1,58,'',3,0 UNION
+SELECT 3, 'A',547309,GETDATE(),'7586','ANA MARIA BARRIOS VARGAS',102,2,NULL,2,'NUESTRA CAMIONETA','N',5,45,'*** @@@ ***',2,0 UNION
+SELECT 3, 'A',547237,GETDATE(),'9824','MOSTRADOR',102,2,NULL,1,'MOSTRADOR','N',2,7,'*** PASAR COTIZACION A BLANCA ***',2,0</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="FECHA">
+          <DataField>FECHA</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SUC_CLAVE">
+          <DataField>SUC_CLAVE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="FOLIO">
+          <DataField>FOLIO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CLAVE">
+          <DataField>CLAVE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NUMERO">
+          <DataField>NUMERO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CLIENTE">
+          <DataField>CLIENTE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VENDEDOR">
+          <DataField>VENDEDOR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="GESTOR">
+          <DataField>GESTOR</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RUTA">
+          <DataField>RUTA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CONDICION">
+          <DataField>CONDICION</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TRANSPORTISTA">
+          <DataField>TRANSPORTISTA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AUTORIZACION">
+          <DataField>AUTORIZACION</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RENGLONES">
+          <DataField>RENGLONES</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="EXISTENCIA">
+          <DataField>EXISTENCIA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OBSERVACIONES">
+          <DataField>OBSERVACIONES</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ORDEN">
+          <DataField>ORDEN</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="INDICE">
+          <DataField>INDICE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <Code>Function EliminaRetornos(ByVal cadena As String) As String 
+	Dim CadenaResultado as String
+	If(cadena &lt;&gt; "") Then
+	CadenaResultado = cadena.Replace(chr(10) ," ").Replace(chr(13)," ")
+	Else
+	CadenaResultado =""
+	End if
+	return CadenaResultado
+End Function</Code>
+  <Language>es-MX</Language>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>c43e7850-4d53-4ac7-b49f-83ca936b6ca6</rd:ReportID>
+</Report>

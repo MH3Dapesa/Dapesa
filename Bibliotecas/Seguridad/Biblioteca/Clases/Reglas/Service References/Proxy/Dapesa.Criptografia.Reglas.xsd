@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Reglas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Reglas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Comun" />
+  <xs:complexType name="Cifrado">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dapesa.Criptografia.Comun" minOccurs="0" name="_oAlgoritmo" type="q1:Definiciones.TipoCifrado" />
+      <xs:element minOccurs="0" name="_oLlave" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="_oVectorInicializacion" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cifrado" nillable="true" type="tns:Cifrado" />
+</xs:schema>

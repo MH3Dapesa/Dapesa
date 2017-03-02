@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Almacen.Pedidos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Almacen.Pedidos.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Almacen.Pedidos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Almacen\Pedidos\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Almacen.Pedidos.Comun.pdb

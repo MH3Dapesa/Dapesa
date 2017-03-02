@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Compras\OrdenCompra\Biblioteca\Comun\bin\Debug\Dapesa.Compras.OrdenCompra.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Compras\OrdenCompra\Biblioteca\Comun\bin\Debug\Dapesa.Compras.OrdenCompra.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Compras\OrdenCompra\Biblioteca\Comun\obj\Debug\Dapesa.Compras.OrdenCompra.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Compras\OrdenCompra\Biblioteca\Comun\obj\Debug\Dapesa.Compras.OrdenCompra.Comun.pdb

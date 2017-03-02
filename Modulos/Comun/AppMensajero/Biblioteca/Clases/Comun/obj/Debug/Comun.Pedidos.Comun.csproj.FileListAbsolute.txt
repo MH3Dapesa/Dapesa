@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Biblioteca\Clases\Comun\bin\Debug\Comun.Pedidos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Biblioteca\Clases\Comun\bin\Debug\Comun.Pedidos.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Biblioteca\Clases\Comun\obj\Debug\Comun.Pedidos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Biblioteca\Clases\Comun\obj\Debug\Comun.Pedidos.Comun.pdb

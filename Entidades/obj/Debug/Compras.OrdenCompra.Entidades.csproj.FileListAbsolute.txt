@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Entidades\bin\Debug\Dapesa.Compras.OrdenCompra.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Entidades\bin\Debug\Dapesa.Compras.OrdenCompra.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Entidades\obj\Debug\Dapesa.Compras.OrdenCompra.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Entidades\obj\Debug\Dapesa.Compras.OrdenCompra.Entidades.pdb

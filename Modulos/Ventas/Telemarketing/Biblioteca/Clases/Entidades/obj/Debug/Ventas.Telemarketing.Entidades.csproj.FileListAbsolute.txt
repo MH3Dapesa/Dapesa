@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Ventas.Telemarketing.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Ventas.Telemarketing.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Ventas.Telemarketing.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Ventas.Telemarketing.Entidades.pdb

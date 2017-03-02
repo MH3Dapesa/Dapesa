@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Dapesa.Comun.Entidades" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Entidades" />
+  <xs:element name="Validar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dapesa.Comun.Entidades" minOccurs="0" name="poConexion" nillable="true" type="q1:Conexion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidarResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Despachar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dapesa.Comun.Entidades" minOccurs="0" name="poConexion" nillable="true" type="q2:Conexion" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Entidades" minOccurs="0" name="poSentencia" nillable="true" type="q3:ArrayOfSentencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DespacharResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DespacharResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

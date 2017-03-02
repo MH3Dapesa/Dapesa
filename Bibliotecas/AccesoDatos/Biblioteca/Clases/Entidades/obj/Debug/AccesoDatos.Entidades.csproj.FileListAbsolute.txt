@@ -1,0 +1,7 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.AccesoDatos.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.AccesoDatos.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.AccesoDatos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.AccesoDatos.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\obj\Debug\AccesoDatos.Entidades.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.AccesoDatos.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.AccesoDatos.Entidades.pdb

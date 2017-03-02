@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comun.Informes.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Biblioteca\Clases\Entidades\bin\Debug\Dapesa.Comun.Informes.Entidades.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Comun.Informes.Entidades.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\Informes\Biblioteca\Clases\Entidades\obj\Debug\Dapesa.Comun.Informes.Entidades.pdb

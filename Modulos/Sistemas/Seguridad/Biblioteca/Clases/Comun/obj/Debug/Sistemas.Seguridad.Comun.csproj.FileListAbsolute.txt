@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Sistemas.Seguridad.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Sistemas.Seguridad.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Sistemas.Seguridad.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Seguridad\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Sistemas.Seguridad.Comun.pdb

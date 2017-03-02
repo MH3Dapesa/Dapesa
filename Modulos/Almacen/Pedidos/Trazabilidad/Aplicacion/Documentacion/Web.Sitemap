@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="~/Default.aspx" title="Home"  description="Inicio">
+		<siteMapNode url="~/Formularios/Comun/Aeroflash.aspx" title="Guía: AEROFLASH"  description="Aeroflash" />
+		<siteMapNode url="~/Formularios/SanRafael/Afimex.aspx" title="Guía: AFIMEX"  description="Afimex" />
+    <!--Agregado para guia AltosPack 23/09/2015-->
+    <siteMapNode url="~/Formularios/Leon/AltosPack.aspx" title="Guía: AltosPack"  description="AltosPack" />
+		<siteMapNode url="~/Formularios/Leon/AutlanExpress.aspx" title="Guía: AUTLÁN EXPRESS"  description="Autlán Express" />
+		<siteMapNode url="~/Error.aspx" title="Error"  description="Error" />
+		<siteMapNode url="~/Formularios/SanRafael/Estafeta.aspx" title="Guía: ESTAFETA"  description="Estafeta" />
+		<siteMapNode url="~/Formularios/Comun/EstrellaBlanca.aspx" title="Guía: ESTRELLA BLANCA"  description="Estrella Blanca" />
+		<siteMapNode url="~/Formularios/Comun/EtiquetaBlanca.aspx" title="Etiqueta blanca"  description="Etiqueta blanca" />
+		<siteMapNode url="~/Formularios/Leon/FletesSur.aspx" title="Guía: PAQUETERÍA Y FLETES DEL SUR"  description="Fletes del Sur" />
+		<siteMapNode url="~/Formularios/Leon/Gacelas.aspx" title="Guía: GACELAS DEL PACÍFICO"  description="Gacelas del Pacífico" />
+    <siteMapNode url="~/Formularios/Monterrey/HB.aspx" title="Guía: MENSAJERIA Y PAQUETERIA HB"  description="MENSAJERIA Y PAQUETERIA HB" />
+    <siteMapNode url="~/Formularios/Leon/IGAPAQ.aspx" title="Guía: IGAPAQ"  description="IGAPAQ" />
+		<siteMapNode url="~/Formularios/SanRafael/Inbox.aspx" title="Guía: INBOX"  description="Inbox" />
+		<siteMapNode url="~/Formularios/Leon/ODM.aspx" title="Guía: ODM EXPRESS"  description="ODM" />
+		<siteMapNode url="~/Formularios/Leon/ServicioExpress.aspx" title="Guía: GDL-COL SERVICIO EXPRESS"  description="Servicio Express" />
+		<siteMapNode url="~/Formularios/Leon/StarPack.aspx" title="Guía: STARPACK AEROENTREGA"  description="StarPack" />
+    <siteMapNode url="~/Formularios/Monterrey/Sumypack.aspx" title="Guía: SUMYPACK"  description="Sumypack" />
+    <siteMapNode url="~/Formularios/Leon/Vencedor.aspx" title="Guía: VENCEDOR"  description="Vencedor" />
+	</siteMapNode>
+</siteMap>

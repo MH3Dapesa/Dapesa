@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Ventas.Telemarketing.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Ventas.Telemarketing.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Ventas.Telemarketing.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Telemarketing\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Ventas.Telemarketing.Comun.pdb

@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\NCR\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Credito.NCR.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\NCR\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Credito.NCR.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\NCR\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Credito.NCR.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\NCR\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Credito.NCR.Comun.pdb

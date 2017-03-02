@@ -1,0 +1,7 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Desbloqueos\Biblioteca\Reglas\bin\Debug\Sistemas.Desbloqueos.Reglas.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Desbloqueos\Biblioteca\Reglas\bin\Debug\Sistemas.Desbloqueos.Reglas.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Desbloqueos\Biblioteca\Reglas\bin\Debug\Sistemas.Desbloqueos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Desbloqueos\Biblioteca\Reglas\bin\Debug\Sistemas.Desbloqueos.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Desbloqueos\Biblioteca\Reglas\obj\Debug\Sistemas.Desbloqueos.Reglas.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Desbloqueos\Biblioteca\Reglas\obj\Debug\Sistemas.Desbloqueos.Reglas.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Sistemas\Desbloqueos\Biblioteca\Reglas\obj\Debug\Sistemas.Desbloqueos.Reglas.pdb

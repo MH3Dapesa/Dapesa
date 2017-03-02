@@ -1,0 +1,7 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.Directorios.Reglas.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.Directorios.Reglas.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.Directorios.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\bin\Debug\Dapesa.Documentos.Directorios.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\obj\Debug\Documentos.Directorios.Reglas.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\obj\Debug\Dapesa.Documentos.Directorios.Reglas.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Documentos\Directorios\Biblioteca\Clases\Reglas\obj\Debug\Dapesa.Documentos.Directorios.Reglas.pdb

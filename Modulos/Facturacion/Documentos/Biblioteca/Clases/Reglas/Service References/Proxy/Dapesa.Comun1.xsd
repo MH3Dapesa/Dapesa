@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dapesa.Comun" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dapesa.Comun" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Definiciones.TipoConexion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CredencialesExplicitas" />
+      <xs:enumeration value="NombreConexion" />
+      <xs:enumeration value="NoTNSNAMES" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Definiciones.TipoConexion" nillable="true" type="tns:Definiciones.TipoConexion" />
+  <xs:simpleType name="Definiciones.TipoCliente">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MySql" />
+      <xs:enumeration value="Oracle" />
+      <xs:enumeration value="SqlServer" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Definiciones.TipoCliente" nillable="true" type="tns:Definiciones.TipoCliente" />
+</xs:schema>

@@ -1,0 +1,5 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Dapesa.Ventas.Pedidos.Comun\bin\Debug\Dapesa.Ventas.Pedidos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Dapesa.Ventas.Pedidos.Comun\bin\Debug\Dapesa.Ventas.Pedidos.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Dapesa.Ventas.Pedidos.Comun\obj\Debug\Dapesa.Ventas.Pedidos.Comun.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Dapesa.Ventas.Pedidos.Comun\obj\Debug\Dapesa.Ventas.Pedidos.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Ventas\Pedidos\Dapesa.Ventas.Pedidos.Comun\obj\Debug\Dapesa.Ventas.Pedidos.Comun.pdb

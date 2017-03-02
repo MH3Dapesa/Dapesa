@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBA6164E-846D-46F1-8E25-553E32919793}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dapesa.Ventas.Telemarketing.Reglas</RootNamespace>
+    <AssemblyName>Dapesa.Ventas.Telemarketing.Reglas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelperLayoutCliente.cs" />
+    <Compile Include="HelperLayoutContacto.cs" />
+    <Compile Include="HelperItinerario.cs" />
+    <Compile Include="LayoutCliente.cs" />
+    <Compile Include="LayoutContacto.cs" />
+    <Compile Include="Itinerario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Proxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\AccesoDatos\Biblioteca\Clases\Comun\AccesoDatos.Comun.csproj">
+      <Project>{23346f8d-4397-4427-ae08-d06963df39de}</Project>
+      <Name>AccesoDatos.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\AccesoDatos.Entidades.csproj">
+      <Project>{41ddc4fd-bd9c-4ba1-ba96-94c57ca0a593}</Project>
+      <Name>AccesoDatos.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Comun\Biblioteca\Clases\Comun\Comun.csproj">
+      <Project>{b516247f-557d-474f-9954-2bc7d89759dc}</Project>
+      <Name>Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Comun\Biblioteca\Clases\Entidades\Comun.Entidades.csproj">
+      <Project>{1f35cea7-7b03-4355-9dfb-901ff53bc955}</Project>
+      <Name>Comun.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Criptografia\Biblioteca\Clases\Reglas\Criptografia.Reglas.csproj">
+      <Project>{5dfc2659-d141-4819-b456-c006754a7aec}</Project>
+      <Name>Criptografia.Reglas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Seguridad\Biblioteca\Clases\Entidades\Seguridad.Entidades.csproj">
+      <Project>{3a12f1ca-845f-4af9-b8da-a43b397b6f5c}</Project>
+      <Name>Seguridad.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comun\Ventas.Telemarketing.Comun.csproj">
+      <Project>{413161a6-456e-4182-b525-70084ecd7ac5}</Project>
+      <Name>Ventas.Telemarketing.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Ventas.Telemarketing.Entidades.csproj">
+      <Project>{3826b243-b1c5-4eda-b30d-3798f206d42f}</Project>
+      <Name>Ventas.Telemarketing.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\Dapesa.AccesoDatos.Comun.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\Dapesa.AccesoDatos.Entidades.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\Dapesa.Comun.Entidades.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\Dapesa.Comun.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\Dapesa.Criptografia.Comun.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\Dapesa.Criptografia.Reglas.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\service.wsdl" />
+    <None Include="Service References\Proxy\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\System.Data.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Proxy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

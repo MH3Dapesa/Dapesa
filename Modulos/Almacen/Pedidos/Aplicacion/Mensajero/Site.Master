@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Dapesa.Almacen.Pedidos.IU.Mensajero.Site" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+	<title></title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png" />
+	<link rel="stylesheet" type="text/css" href="Css/HojaEstilos.css" />
+    <link rel="stylesheet" type="text/css" href="Css/HojaEstilosGridView.css" />
+	<script type="text/javascript" src="Js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".bindable").trigger("click");
+		});
+		function cancelAsyncPostBack() {
+			var manager = Sys.WebForms.PageRequestManager.getInstance();
+
+			if (manager.get_isInAsyncPostBack())
+				manager.abortPostBack();
+		}
+	</script>
+	<asp:ContentPlaceHolder ID="cphEncabezado" runat="server" />
+</head>
+<body>
+	<form id="frmMain" runat="server" enctype="multipart/form-data" method="post">
+		<asp:ToolkitScriptManager ID="smScriptManager" runat="server" ScriptMode="Release" EnablePartialRendering="true" EnableScriptGlobalization="true" EnableScriptLocalization="true" AsyncPostBackTimeout="360000" CombineScripts="false" />
+		<asp:UpdateProgress ID="upPanelEspera" runat="server" DisplayAfter="0">
+			<ProgressTemplate>
+				<div class="entireScreen updateProgressBackground"></div>
+				<div class="centered preloader">
+					<asp:Image ID="imgEsperante" runat="server" ImageUrl="~/Img/esperante.gif" AlternateText="procesando solicitud..." />
+					<br /><br />
+					<asp:LinkButton ID="btnCancelar" runat="server" Text="Cancelar" OnClientClick="cancelAsyncPostBack()" CausesValidation="false" Visible="false" />
+				</div>
+			</ProgressTemplate>
+		</asp:UpdateProgress>
+		<div style="width:98%;height:80%;padding-left:10px;">
+			<table border="0" style="width:100%;">
+				<tr>
+					<td style="width:60%">
+						<nav class="navigation">
+							<ul>
+								<li><a href="Default.aspx">Home</a></li><!--
+							 --><li><a href="Listado.aspx">Pedidos</a></li>
+							</ul>
+						</nav>
+					</td>
+					<td style="width:100%;text-align:right;padding-right:20px;">
+						<asp:Label ID="lblCredenciales" runat="server" CssClass="upperText" />
+					</td>
+					<td style="width:20px;text-align:right;">
+						<asp:LinkButton ID="btnSalir" runat="server" Text="Salir" OnClick="btnSalir_Click" CausesValidation="false" />
+					</td>
+				</tr>
+			</table>
+			<asp:ContentPlaceHolder ID="cphContenidoPrincipal" runat="server" />
+		</div>
+	</form>
+</body>
+</html>

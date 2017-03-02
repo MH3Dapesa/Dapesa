@@ -1,0 +1,2516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="dsSIIL">
+      <ConnectionProperties>
+        <DataProvider>ORACLE</DataProvider>
+        <ConnectString>Data Source=SIIL;Unicode=True</ConnectString>
+        <Prompt>Especifique un nombre de usuario y una contraseña para el origen de datos dsSIIL:</Prompt>
+      </ConnectionProperties>
+      <rd:DataSourceID>0dd1ab81-5eb5-4b5e-b01c-7e714a7c1ac1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsVentaDetalle">
+      <Query>
+        <DataSourceName>dsSIIL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name=":pClaveCliente">
+            <Value>=Parameters!pClaveCliente.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT R.MCA_CLAVE,M.DESCRIPCION AS MARCA,R.ANIO,SUM(R.IMPORTE) AS IMPORTE FROM (
+	SELECT D.MCA_CLAVE,F.ANIO,SUM(D.IMPORTE) AS IMPORTE FROM
+		(
+			SELECT F.FOLFAC_FOLIO,F.NUMERO,EXTRACT(YEAR FROM F.FECHA) AS ANIO FROM FACTURAS_EMITIDAS F 
+			WHERE F.CLI_CLAVE=''||:pClaveCliente||'' AND EXTRACT(YEAR FROM F.FECHA) BETWEEN EXTRACT(YEAR FROM SYSDATE)-3 AND EXTRACT(YEAR FROM SYSDATE) AND F.STATUS_CAN='N'
+		) F,
+		(SELECT D.FACT_EM_FOLFAC_FOLIO,D.FACT_EM_NUMERO,A.MCA_CLAVE,D.CANTIDAD*D.PRECIO AS IMPORTE FROM DETALLES_FACTURAS_EMITIDAS D, ARTICULOS A WHERE A.CLAVE=D.ART_CLAVE AND D.ART_CLAVE&lt;&gt;'SEGURO') D
+	WHERE D.FACT_EM_FOLFAC_FOLIO=F.FOLFAC_FOLIO AND D.FACT_EM_NUMERO=F.NUMERO GROUP BY D.MCA_CLAVE,F.ANIO
+	UNION
+	SELECT D.MCA_CLAVE,N.ANIO,SUM(D.IMPORTE*-1) AS IMPORTE FROM
+		(
+			SELECT N.FOL_NCR_CT_FOLIO,N.NUMERO,EXTRACT(YEAR FROM N.FECHA) AS ANIO FROM NOTAS_CREDITO_AL_CTE N 
+			WHERE N.CLI_CLAVE=''||:pClaveCliente||'' AND EXTRACT(YEAR FROM N.FECHA) BETWEEN EXTRACT(YEAR FROM SYSDATE)-3 AND EXTRACT(YEAR FROM SYSDATE) AND N.CONC_NOT_CLAVE IN (4,5,19,20,21,34) AND N.STATUS_CAN='N'
+		) N,
+		(SELECT D.NCR_AL_CTE_FOL_NCR_CT_FOLIO,D.NCR_AL_CTE_NUMERO,A.MCA_CLAVE,D.CANTIDAD*D.PRECIO AS IMPORTE FROM DETALLES_NOTAS_CREDITO_AL_CTE D, ARTICULOS A WHERE A.CLAVE=D.ART_CLAVE AND D.ART_CLAVE IS NOT NULL) D
+	WHERE D.NCR_AL_CTE_FOL_NCR_CT_FOLIO=N.FOL_NCR_CT_FOLIO AND D.NCR_AL_CTE_NUMERO=N.NUMERO GROUP BY D.MCA_CLAVE,N.ANIO
+) R, MARCAS M WHERE M.CLAVE=R.MCA_CLAVE GROUP BY R.MCA_CLAVE,M.DESCRIPCION,R.ANIO ORDER BY MARCA,ANIO</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ANIO">
+          <DataField>ANIO</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="MCA_CLAVE">
+          <DataField>MCA_CLAVE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="MARCA">
+          <DataField>MARCA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IMPORTE">
+          <DataField>IMPORTE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="tblVenta">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="txtClave">
+                        <UserSort>
+                          <SortExpression>=Fields!MCA_CLAVE.Value</SortExpression>
+                          <SortExpressionScope>MARCA</SortExpressionScope>
+                          <SortTarget>dsVentaDetalle</SortTarget>
+                        </UserSort>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>CLAVE</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="txtDescripcion">
+                        <CanGrow>true</CanGrow>
+                        <UserSort>
+                          <SortExpression>=Fields!MARCA.Value</SortExpression>
+                          <SortExpressionScope>MARCA</SortExpressionScope>
+                          <SortTarget>dsVentaDetalle</SortTarget>
+                        </UserSort>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>DESCRIPCIÓN</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.3cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.3cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.3cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.3cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="MARCA_IMPORTE">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!IMPORTE.Value)+0</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIf(
+	Fields!ANIO.Value=Year(Now)-3,
+	IIf(
+		Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA")&gt;
+		Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+		"Yellow",
+		"White"
+	),
+	IIf(
+		Fields!ANIO.Value=Year(Now)-2,
+		IIf(
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA")&gt;
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			"Yellow",
+			"White"
+		),
+		"White"
+	)
+ )</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ANIO_3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA")+0</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>AnalisisMarca</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="pClaveCliente">
+                                      <Value>=Parameters!pClaveCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pClaveMarca">
+                                      <Value>=Fields!MCA_CLAVE.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pCliente">
+                                      <Value>=Parameters!pCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pMarca">
+                                      <Value>=Fields!MARCA.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Code.FondoColor("anio_3",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+			)</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ANIO_2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA")+0</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>AnalisisMarca</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="pClaveCliente">
+                                      <Value>=Parameters!pClaveCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pClaveMarca">
+                                      <Value>=Fields!MCA_CLAVE.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pCliente">
+                                      <Value>=Parameters!pCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pMarca">
+                                      <Value>=Fields!MARCA.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Code.FondoColor("anio_2",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+			)</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ANIO_1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA")+0</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>AnalisisMarca</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="pClaveCliente">
+                                      <Value>=Parameters!pClaveCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pClaveMarca">
+                                      <Value>=Fields!MCA_CLAVE.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pCliente">
+                                      <Value>=Parameters!pCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pMarca">
+                                      <Value>=Fields!MARCA.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Code.FondoColor("anio_1",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+			)</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ANIO_ACTUAL">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")+0</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>AnalisisMarca</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="pClaveCliente">
+                                      <Value>=Parameters!pClaveCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pClaveMarca">
+                                      <Value>=Fields!MCA_CLAVE.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pCliente">
+                                      <Value>=Parameters!pCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pMarca">
+                                      <Value>=Fields!MARCA.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Code.FondoColor("anio",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+			)</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="DIF_PESOS">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA")-
+ Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA")</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>AnalisisMarca</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="pClaveCliente">
+                                      <Value>=Parameters!pClaveCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pClaveMarca">
+                                      <Value>=Fields!MCA_CLAVE.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pCliente">
+                                      <Value>=Parameters!pCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pMarca">
+                                      <Value>=Fields!MARCA.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="DIF_PORCENTAJE">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Code.DivisionMeta(Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA")
+)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>P3</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>AnalisisMarca</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="pClaveCliente">
+                                      <Value>=Parameters!pClaveCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pClaveMarca">
+                                      <Value>=Fields!MCA_CLAVE.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pCliente">
+                                      <Value>=Parameters!pCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pMarca">
+                                      <Value>=Fields!MARCA.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="PROYECCION">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")/DatePart(DateInterval.DayOfYear,Now) * DatePart(DateInterval.DayOfYear, CDate("31/12/" &amp; Year(Now)))
+ 'Fórmula:
+ '   AcumuladoEnElAñoActual/DíaDelAño * NúmeroDeDíasDelAñoA</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <Format>N2</Format>
+                                    <Color>=IIf(
+Code.PintarPromedioTendencia(Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),	  
+	  Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")/DatePart(DateInterval.DayOfYear,Now) * DatePart(DateInterval.DayOfYear, CDate("31/12/" &amp; Year(Now)))
+			) = "#D33739",
+			"White","Black"
+			)</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ActionInfo>
+                            <Actions>
+                              <Action>
+                                <Drillthrough>
+                                  <ReportName>AnalisisMarca</ReportName>
+                                  <Parameters>
+                                    <Parameter Name="pClaveCliente">
+                                      <Value>=Parameters!pClaveCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pClaveMarca">
+                                      <Value>=Fields!MCA_CLAVE.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pCliente">
+                                      <Value>=Parameters!pCliente.Value</Value>
+                                    </Parameter>
+                                    <Parameter Name="pMarca">
+                                      <Value>=Fields!MARCA.Value</Value>
+                                    </Parameter>
+                                  </Parameters>
+                                </Drillthrough>
+                              </Action>
+                            </Actions>
+                          </ActionInfo>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=Code.PintarPromedioTendencia(Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),	  
+	  Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")/DatePart(DateInterval.DayOfYear,Now) * DatePart(DateInterval.DayOfYear, CDate("31/12/" &amp; Year(Now)))
+			)</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.86458cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CONTEO">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value EvaluationMode="Constant" />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CONTEO_3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Code.IndicadorPintado("anio_3",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+							)
+	  ) &amp; " / " &amp;
+SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf((Fields!ANIO.Value=Year(Now)-3) AND (Fields!IMPORTE.Value &gt;0),1,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N0</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CONTEO_2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Code.IndicadorPintado("anio_2",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+							)
+	  ) &amp; " / " &amp;
+SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf((Fields!ANIO.Value=Year(Now)-2) AND (Fields!IMPORTE.Value &gt;0),1,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N0</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="txtBisel">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Code.IndicadorPintado("anio_1",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+							)
+	  ) &amp; " / " &amp;
+SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf((Fields!ANIO.Value=Year(Now)-1) AND (Fields!IMPORTE.Value &gt;0),1,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N0</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Code.IndicadorPintado("anio",Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),
+							Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")
+							)
+	  ) &amp; " / " &amp;
+SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf((Fields!ANIO.Value=Year(Now)) AND (Fields!IMPORTE.Value &gt;0),1,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N0</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		IIf(
+		Code.PintarPromedioTendencia(Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),
+			Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),	  
+	  Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")/DatePart(DateInterval.DayOfYear,Now) * DatePart(DateInterval.DayOfYear, CDate("31/12/" &amp; Year(Now)))
+			) = "WHITE",1,0)
+		,0
+	)
+	) &amp; " / " &amp; 
+SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		IIf(
+		Sum(CDec(IIf((Fields!ANIO.Value=Year(Now)) AND (Fields!IMPORTE.Value &gt;0),1,0)),"MARCA") &gt; 0
+		,1
+		,0
+		),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.97042cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="txtTotalYear_3">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-3, Fields!IMPORTE.Value,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="txtTotalYear_2">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2, Fields!IMPORTE.Value,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="txtTotalYear_1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1, Fields!IMPORTE.Value,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="txtTotalYear">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf(Fields!ANIO.Value=Year(Now), Fields!IMPORTE.Value,0)),"MARCA"),0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=ReportItems!txtTotalYear_2.Value-
+ ReportItems!txtTotalYear_1.Value</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(
+	IIF(
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0)),"MARCA"),1
+	) 
+	&gt; 
+	IIf(
+	Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0)),"MARCA"),0
+	),
+		Sum(CDec(IIf(Fields!ANIO.Value=Year(Now),Fields!IMPORTE.Value,0)),"MARCA")/DatePart(DateInterval.DayOfYear,Now) * DatePart(DateInterval.DayOfYear, CDate("31/12/" &amp; Year(Now)))
+		,0
+	)
+	)</Value>
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>N2</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>WhiteSmoke</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>Gainsboro</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="ANIO">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ANIO.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!ANIO.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="ANIO">
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!ANIO.Value</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>ANIO</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtAnio_3">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Year(Now)-3</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtAnio_2">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Year(Now)-2</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtAnio_1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Year(Now)-1</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtAnio">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Year(Now)</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtDiferenciaPesos">
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>="DIFERENCIA ($)" &amp; vbNewLine &amp; Year(Now)-2 &amp; "-" &amp; Year(Now)-1</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtDiferenciaPorcentaje">
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>="DIFERENCIA (%)" &amp; vbNewLine &amp; Year(Now)-2 &amp; "-" &amp; Year(Now)-1</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1.2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtProyeccion">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>="PROYECCIÓN TENDENCIA" &amp; vbNewLine &amp;  Year(Now)</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>White</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>MidnightBlue</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="MARCA">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!MCA_CLAVE.Value</GroupExpression>
+                    </GroupExpressions>
+                    <Filters>
+                      <Filter>
+                        <FilterExpression>=IIf(Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-2,Fields!IMPORTE.Value,0))),1)</FilterExpression>
+                        <Operator>GreaterThan</Operator>
+                        <FilterValues>
+                          <FilterValue DataType="Float">=IIf(Parameters!pDecremento.Value,Sum(CDec(IIf(Fields!ANIO.Value=Year(Now)-1,Fields!IMPORTE.Value,0))),0)</FilterValue>
+                        </FilterValues>
+                      </Filter>
+                    </Filters>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!MARCA.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>2cm</Size>
+                    <CellContents>
+                      <Textbox Name="MCA_CLAVE">
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=First(Fields!MCA_CLAVE.Value)</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <Format>0;(0)</Format>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Right</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>MCA_CLAVE</rd:DefaultName>
+                        <ActionInfo>
+                          <Actions>
+                            <Action>
+                              <Drillthrough>
+                                <ReportName>AnalisisMarca</ReportName>
+                                <Parameters>
+                                  <Parameter Name="pClaveCliente">
+                                    <Value>=Parameters!pClaveCliente.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="pClaveMarca">
+                                    <Value>=Fields!MCA_CLAVE.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="pCliente">
+                                    <Value>=Parameters!pCliente.Value</Value>
+                                  </Parameter>
+                                  <Parameter Name="pMarca">
+                                    <Value>=Fields!MARCA.Value</Value>
+                                  </Parameter>
+                                </Parameters>
+                              </Drillthrough>
+                            </Action>
+                          </Actions>
+                        </ActionInfo>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <rd:Selected>true</rd:Selected>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>10.3cm</Size>
+                        <CellContents>
+                          <Textbox Name="MARCA">
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Fields!MARCA.Value</Value>
+                                    <Style>
+                                      <FontSize>8pt</FontSize>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Left</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>MARCA</rd:DefaultName>
+                            <ActionInfo>
+                              <Actions>
+                                <Action>
+                                  <Drillthrough>
+                                    <ReportName>AnalisisMarca</ReportName>
+                                    <Parameters>
+                                      <Parameter Name="pClaveCliente">
+                                        <Value>=Parameters!pClaveCliente.Value</Value>
+                                      </Parameter>
+                                      <Parameter Name="pClaveMarca">
+                                        <Value>=Fields!MCA_CLAVE.Value</Value>
+                                      </Parameter>
+                                      <Parameter Name="pCliente">
+                                        <Value>=Parameters!pCliente.Value</Value>
+                                      </Parameter>
+                                      <Parameter Name="pMarca">
+                                        <Value>=Fields!MARCA.Value</Value>
+                                      </Parameter>
+                                    </Parameters>
+                                  </Drillthrough>
+                                </Action>
+                              </Actions>
+                            </ActionInfo>
+                            <Style>
+                              <Border>
+                                <Color>WhiteSmoke</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>2cm</Size>
+                    <CellContents>
+                      <Textbox Name="txtConteo">
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>TOTAL MARCAS</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>Gainsboro</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>10.3cm</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox1">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value>=Sum(
+	IIf(
+		Sum(CDec(IIf(Year(Now)=Year(Now),1,0)),"MARCA")=
+		Sum(CDec(IIf(Year(Now)=Year(Now),1,0)),"MARCA"),
+		1,
+		0
+	 )
+ )</Value>
+                                    <Style>
+                                      <FontSize>8pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                      <Format>N0</Format>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Right</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox1</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>WhiteSmoke</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>2cm</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox6">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>TOTAL IMPORTE</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox6</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>WhiteSmoke</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>Gainsboro</BackgroundColor>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember>
+                      <TablixHeader>
+                        <Size>10.3cm</Size>
+                        <CellContents>
+                          <Textbox Name="Textbox7">
+                            <CanGrow>true</CanGrow>
+                            <KeepTogether>true</KeepTogether>
+                            <Paragraphs>
+                              <Paragraph>
+                                <TextRuns>
+                                  <TextRun>
+                                    <Value />
+                                    <Style>
+                                      <FontSize>8pt</FontSize>
+                                      <FontWeight>Bold</FontWeight>
+                                    </Style>
+                                  </TextRun>
+                                </TextRuns>
+                                <Style>
+                                  <TextAlign>Left</TextAlign>
+                                </Style>
+                              </Paragraph>
+                            </Paragraphs>
+                            <rd:DefaultName>Textbox7</rd:DefaultName>
+                            <Style>
+                              <Border>
+                                <Color>WhiteSmoke</Color>
+                                <Style>Solid</Style>
+                              </Border>
+                              <BackgroundColor>Gainsboro</BackgroundColor>
+                              <VerticalAlign>Middle</VerticalAlign>
+                              <PaddingLeft>2pt</PaddingLeft>
+                              <PaddingRight>2pt</PaddingRight>
+                              <PaddingTop>2pt</PaddingTop>
+                              <PaddingBottom>2pt</PaddingBottom>
+                            </Style>
+                          </Textbox>
+                        </CellContents>
+                      </TablixHeader>
+                    </TablixMember>
+                  </TablixMembers>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <FixedColumnHeaders>true</FixedColumnHeaders>
+            <KeepTogether>true</KeepTogether>
+            <DataSetName>dsVentaDetalle</DataSetName>
+            <Height>3.635cm</Height>
+            <Width>31.5cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>3.635cm</Height>
+        <Style />
+      </Body>
+      <Width>31.8cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>2.43528cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="imgLogo">
+              <Source>Embedded</Source>
+              <Value>dapesa</Value>
+              <Sizing>Clip</Sizing>
+              <Top>0.03528cm</Top>
+              <Height>1.2cm</Height>
+              <Width>9.5cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>80pt</PaddingLeft>
+                <PaddingTop>2pt</PaddingTop>
+              </Style>
+            </Image>
+            <Textbox Name="txtTitulo">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Ventas anuales marca</Value>
+                      <Style>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Left>9.5cm</Left>
+              <Height>1.2cm</Height>
+              <Width>16.57667cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="txtEmpresa">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="DISTRIBUIDORA DE AUTOPARTES PESCADOR S.A. DE C.V."</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1.23528cm</Top>
+              <Height>1.2cm</Height>
+              <Width>9.5cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="txtEmision">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Fecha de emisión: " &amp; Ucase(FormatDateTime(Globals!ExecutionTime, vbLongDate)) &amp; ". " &amp; Ucase(FormatDateTime(Globals!ExecutionTime, vbLongTime))</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1.83528cm</Top>
+              <Left>9.5cm</Left>
+              <Height>0.6cm</Height>
+              <Width>20cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="txtParametros">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Cliente: " &amp; Parameters!pCliente.Value &amp; " Clave: " &amp; Parameters!pClaveCliente.Value</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1.23528cm</Top>
+              <Left>9.5cm</Left>
+              <Height>0.6cm</Height>
+              <Width>20cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox9">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Pag." &amp; Globals.PageNumber &amp; " DE " &amp; Globals.TotalPages</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Left>26.25306cm</Left>
+              <Height>1.16472cm</Height>
+              <Width>3.24694cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageHeight>21.59cm</PageHeight>
+        <PageWidth>33.96cm</PageWidth>
+        <InteractiveHeight>21.59cm</InteractiveHeight>
+        <InteractiveWidth>27.94cm</InteractiveWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>0.5cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="pClaveCliente">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="-1"</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Cliente Id</Prompt>
+      <Hidden>true</Hidden>
+      <cl:ComponentMetadata>
+        <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
+      </cl:ComponentMetadata>
+    </ReportParameter>
+    <ReportParameter Name="pCliente">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+        </Values>
+      </DefaultValue>
+      <Prompt>Cliente</Prompt>
+      <Hidden>true</Hidden>
+      <cl:ComponentMetadata>
+        <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
+      </cl:ComponentMetadata>
+    </ReportParameter>
+    <ReportParameter Name="pDecremento">
+      <DataType>Boolean</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+        </Values>
+      </DefaultValue>
+      <Prompt>Decremento</Prompt>
+      <Hidden>true</Hidden>
+      <cl:ComponentMetadata />
+    </ReportParameter>
+  </ReportParameters>
+  <Code>
+	  Function DivisionMeta(ByVal dividendo As Decimal, ByVal divisor As Decimal) As Decimal
+
+	  If divisor=0 Then
+	  Return divisor
+	  End If
+
+	  Return 1-(dividendo/divisor)
+	  End Function
+  
+ Function IndicadorPintado(ByVal anio_evaluar As String, ByVal anio_3 As Decimal, ByVal anio_2 As Decimal, ByVal anio_1 As Decimal,  Byval anio As Decimal) As Decimal
+		
+		Dim resultado As Decimal = 0
+		select case anio_evaluar
+			Case "anio_3"
+				if(anio_3 &gt; anio_2 AND anio_3 &gt; anio_1 AND anio_3 &gt; anio) Then
+					resultado = 1
+				Else if(anio_3 = anio_2 OR anio_3 = anio_1 OR anio_3 = anio OR anio_3 &lt; 0) then
+					resultado = 0
+				End if
+			Case "anio_2"
+				if(anio_2 &gt; anio_3 AND anio_2 &gt; anio_1 AND anio_2 &gt; anio) Then
+					resultado = 1
+					else if(anio_2=anio_1) then	
+					resultado = 0
+				else if(anio_2=anio) then	
+					resultado = 0
+				else if(anio_2=anio_3) and (anio_2&gt;=anio_1 AND anio_2 &gt;= anio) AND (anio_2 &gt;= 0) then
+					resultado = 1			
+				else
+					resultado = 0
+				End if
+			Case "anio_1"
+				if(anio_1 &gt; anio_3 AND anio_1 &gt; anio_2 AND anio_1 &gt; anio) then
+					resultado = 1
+				else if(anio_1=anio AND anio_1 &gt;= 0) then	
+					resultado = 0
+				else if(anio_1=anio_3) and (anio_1&gt;=anio_2 AND anio_1 &gt;= anio) AND (anio_1 &gt;= 0) then
+					resultado = 1
+				else if(anio_1=anio_2) and (anio_1&gt;=anio_3 AND anio_1 &gt;= anio) AND (anio_1 &gt;= 0) then	
+					resultado = 1			
+				else
+					resultado = 0
+				End if
+			Case "anio"
+				if(anio &gt; anio_3 AND anio &gt; anio_2 AND anio &gt; anio_1) then
+					resultado = 1
+				else if(anio=anio_3) and (anio&gt;=anio_2 AND anio &gt;= anio_1) AND (anio &gt;= 0) then
+					resultado = 1
+				else if(anio=anio_2) and (anio&gt;=anio_3 AND anio &gt;= anio_1) AND (anio &gt;= 0) then	
+					resultado = 1
+				else if(anio=anio_1) and (anio&gt;=anio_3 AND anio &gt;= anio_2) AND (anio &gt;= 0) then	
+					resultado = 1
+				else
+					resultado = 0
+				End if
+		End Select
+		return resultado
+	End function
+  
+ 
+	Function FondoColor(ByVal anio_evaluar As String, ByVal anio_3 As Decimal, ByVal anio_2 As Decimal, ByVal anio_1 As Decimal,  Byval anio As Decimal) As String
+		
+		Dim resultado As String = "White"
+		select case anio_evaluar
+			Case "anio_3"
+				if(anio_3 &gt; anio_2 AND anio_3 &gt; anio_1 AND anio_3 &gt; anio) Then
+					resultado = "Yellow"
+				Else if(anio_3 = anio_2 OR anio_3 = anio_1 OR anio_3 = anio OR anio_3 &lt; 0) then
+					resultado = "White"
+				End if
+			Case "anio_2"
+				if(anio_2 &gt; anio_3 AND anio_2 &gt; anio_1 AND anio_2 &gt; anio) Then
+					resultado = "Yellow"
+					else if(anio_2=anio_1) then	
+					resultado = "White"
+				else if(anio_2=anio) then	
+					resultado = "White"
+				else if(anio_2=anio_3) and (anio_2&gt;=anio_1 AND anio_2 &gt;= anio) AND (anio_2 &gt;= 0) then
+					resultado = "Yellow"
+				else
+					resultado = "White"
+				End if
+			Case "anio_1"
+				if(anio_1 &gt; anio_3 AND anio_1 &gt; anio_2 AND anio_1 &gt; anio) then
+					resultado = "Yellow"
+				else if(anio_1=anio AND anio_1 &gt;= 0) then	
+					resultado = "White"
+				else if(anio_1=anio_3) and (anio_1&gt;=anio_2 AND anio_1 &gt;= anio) AND (anio_1 &gt;= 0) then
+					resultado = "Yellow"
+				else if(anio_1=anio_2) and (anio_1&gt;=anio_3 AND anio_1 &gt;= anio) AND (anio_1 &gt;= 0) then	
+					resultado = "Yellow"			
+				else
+					resultado = "White"
+				End if
+			Case "anio"
+				if(anio &gt; anio_3 AND anio &gt; anio_2 AND anio &gt; anio_1) then
+					resultado = "Yellow"
+				else if(anio=anio_3) and (anio&gt;=anio_2 AND anio &gt;= anio_1) AND (anio &gt;= 0) then
+					resultado = "Yellow"
+				else if(anio=anio_2) and (anio&gt;=anio_3 AND anio &gt;= anio_1) AND (anio &gt;= 0) then	
+					resultado = "Yellow"
+				else if(anio=anio_1) and (anio&gt;=anio_3 AND anio &gt;= anio_2) AND (anio &gt;= 0) then	
+					resultado = "Yellow"
+				else
+					resultado = "White"
+				End if
+		End Select
+		return resultado
+	End function
+ 
+Function PintarPromedioTendencia(ByVal anio_3 As Decimal, ByVal anio_2 As Decimal, ByVal anio_1 As Decimal, ByVal PromedioTendencia As Decimal) As String
+	Dim resultado As String = "WHITE"
+					if(PromedioTendencia &gt; anio_3 AND PromedioTendencia &gt; anio_2 AND PromedioTendencia &gt; anio_1) then
+					resultado = "WHITE"
+				else if(PromedioTendencia=anio_3) and (PromedioTendencia&gt;=anio_2 AND PromedioTendencia &gt;= anio_1) AND (PromedioTendencia &gt;= 0) then
+					resultado = "WHITE"
+				else if(PromedioTendencia=anio_2) and (PromedioTendencia&gt;=anio_3 AND PromedioTendencia &gt;= anio_1) AND (PromedioTendencia &gt;= 0) then	
+					resultado = "WHITE"
+				else if(PromedioTendencia=anio_1) and (PromedioTendencia&gt;=anio_3 AND PromedioTendencia &gt;= anio_2) AND (PromedioTendencia &gt;= 0) then	
+					resultado = "WHITE"
+				else
+					resultado = "#D33739"
+				End if
+	  return resultado
+
+	  End Function
+</Code>
+  <EmbeddedImages>
+    <EmbeddedImage Name="dapesa">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>es-MX</Language>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>c43e7850-4d53-4ac7-b49f-83ca936b6ca6</rd:ReportID>
+</Report>

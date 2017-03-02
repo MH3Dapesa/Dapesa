@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comunicaciones\Mensajeria\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Comunicaciones.Mensajeria.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comunicaciones\Mensajeria\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Comunicaciones.Mensajeria.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comunicaciones\Mensajeria\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Comunicaciones.Mensajeria.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Comunicaciones\Mensajeria\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Comunicaciones.Mensajeria.Comun.pdb

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="Default.aspx" title="Home"  description="Inicio">
+		<siteMapNode title="Sistema" description="Seguimiento especificas">
+			<siteMapNode url="killer.aspx" title="Tablas Bloqueadas"  description="" />
+			<siteMapNode url="seller.aspx" title="Seguimiento vendedores"  description="" />
+      <siteMapNode url="Loading.aspx" title="Seguimiento Transacciones"  description="" />
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

@@ -1,0 +1,5 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Seguridad\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Seguridad.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Seguridad\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Seguridad.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Seguridad\Biblioteca\Clases\Comun\obj\Debug\Seguridad.Comun.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Seguridad\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Seguridad.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Bibliotecas\Seguridad\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Seguridad.Comun.pdb

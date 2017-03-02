@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Comun" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dapesa.AccesoDatos.Comun" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="Definiciones.TipoSentencia">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Escalar" />
+      <xs:enumeration value="NoQuery" />
+      <xs:enumeration value="Query" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Definiciones.TipoSentencia" nillable="true" type="tns:Definiciones.TipoSentencia" />
+  <xs:simpleType name="Definiciones.TipoManejadorTransaccion">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ContinuarTransaccion" />
+      <xs:enumeration value="FinalizarTransaccion" />
+      <xs:enumeration value="IniciarTransaccion" />
+      <xs:enumeration value="NoTransaccion" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Definiciones.TipoManejadorTransaccion" nillable="true" type="tns:Definiciones.TipoManejadorTransaccion" />
+  <xs:simpleType name="Definiciones.TipoResultado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cadena" />
+      <xs:enumeration value="Conjunto" />
+      <xs:enumeration value="Decimal" />
+      <xs:enumeration value="Entero" />
+      <xs:enumeration value="Vacio">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Definiciones.TipoResultado" nillable="true" type="tns:Definiciones.TipoResultado" />
+</xs:schema>

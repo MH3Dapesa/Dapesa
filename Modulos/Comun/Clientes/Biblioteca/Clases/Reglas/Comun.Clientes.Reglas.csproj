@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{258F7155-D736-4E4F-99F2-A0BB30E95426}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comun.Clientes.Reglas</RootNamespace>
+    <AssemblyName>Comun.Clientes.Reglas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clientes.cs" />
+    <Compile Include="HelperClientes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\AccesoDatos\Biblioteca\Clases\Comun\AccesoDatos.Comun.csproj">
+      <Project>{23346f8d-4397-4427-ae08-d06963df39de}</Project>
+      <Name>AccesoDatos.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\AccesoDatos\Biblioteca\Clases\Entidades\AccesoDatos.Entidades.csproj">
+      <Project>{41ddc4fd-bd9c-4ba1-ba96-94c57ca0a593}</Project>
+      <Name>AccesoDatos.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\AccesoDatos\Biblioteca\Clases\Reglas\AccesoDatos.Reglas.csproj">
+      <Project>{c413a26d-5e01-45f8-a3b9-1e6d6b57cf69}</Project>
+      <Name>AccesoDatos.Reglas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Comun\Biblioteca\Clases\Entidades\Comun.Entidades.csproj">
+      <Project>{1f35cea7-7b03-4355-9dfb-901ff53bc955}</Project>
+      <Name>Comun.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\Bibliotecas\Seguridad\Biblioteca\Clases\Entidades\Seguridad.Entidades.csproj">
+      <Project>{3a12f1ca-845f-4af9-b8da-a43b397b6f5c}</Project>
+      <Name>Seguridad.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Almacen\Pedidos\Biblioteca\Clases\Comun\Almacen.Pedidos.Comun.csproj">
+      <Project>{7781f72e-fe9d-4865-9d42-6e12e4d8ee81}</Project>
+      <Name>Almacen.Pedidos.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Comun\Comun.Clientes.Comun.csproj">
+      <Project>{0c1a6cfc-b19d-4394-a844-caec3b5237fc}</Project>
+      <Name>Comun.Clientes.Comun</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

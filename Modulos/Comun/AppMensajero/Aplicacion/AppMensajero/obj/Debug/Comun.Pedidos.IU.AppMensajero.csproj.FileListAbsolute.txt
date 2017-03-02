@@ -1,0 +1,6 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Aplicacion\AppMensajero\obj\Debug\Comun.Pedidos.IU.AppMensajero.csprojResolveAssemblyReference.cache
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Aplicacion\AppMensajero\obj\Debug\Comun.Pedidos.IU.AppMensajero.Contenedor.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Aplicacion\AppMensajero\obj\Debug\Comun.Pedidos.IU.AppMensajero.InicioSesion.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Aplicacion\AppMensajero\obj\Debug\Comun.Pedidos.IU.AppMensajero.Mensajero.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Aplicacion\AppMensajero\obj\Debug\Comun.Pedidos.IU.AppMensajero.Properties.Resources.resources
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Comun\AppMensajero\Aplicacion\AppMensajero\obj\Debug\Comun.Pedidos.IU.AppMensajero.csproj.GenerateResource.Cache

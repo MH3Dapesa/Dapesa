@@ -1,0 +1,4 @@
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\Clientes\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Credito.Clientes.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\Clientes\Biblioteca\Clases\Comun\bin\Debug\Dapesa.Credito.Clientes.Comun.pdb
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\Clientes\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Credito.Clientes.Comun.dll
+C:\Dapesa\Desarrollo\Proyectos\CodigoFuente\Dapesa\Modulos\Credito\Clientes\Biblioteca\Clases\Comun\obj\Debug\Dapesa.Credito.Clientes.Comun.pdb

@@ -1,0 +1,94 @@
+﻿
+.tblEncabezados {
+     width: 2500px;
+     border-collapse: collapse;
+   
+}
+.tblEncabezados td{
+    border: 1px solid darkslateblue;
+    font-family: Arial;
+    font-size: 9pt;
+    line-height: 9pt;
+    padding: 2pt, 2pt, 2pt, 2pt;
+    text-align: center;
+    background-color : darkslateblue;
+    color: white;
+    height: 25px;
+    font-weight: bold;
+}
+.gvPedidos {
+ 
+    width: 2400px;
+    border-style: solid;
+    border-color: LightGrey;
+    border-width: 1pt;
+    font-family: Arial;
+    color: black;
+    font-size: 9pt;
+    line-height: 9pt;
+    padding: 2pt, 2pt, 2pt, 2pt;
+}
+
+.gridViewHeader {
+    border: 1px solid LightGrey;
+    text-align: center;
+    background-color : darkslateblue;
+    color: white;
+    height: 25px;
+
+}
+
+.gvPedidos td {
+    position:relative;
+    text-align:left;
+    white-space: nowrap;
+    height:20px;
+    border: 1px solid LightGrey;    
+}
+
+
+.td-Descripcion {
+    text-align:left;
+    padding: 0px 0px 0px 50px;
+    width:1500px;
+}
+.td-cliente{
+    width:300px;
+}
+
+/*
+.gvPedidos_td_VEND {
+    width: 35px;
+}
+
+.gvPedidos_td_CLIENTE {
+    width: 271px;   
+}
+
+.gvPedidos_td_PEDIDO {
+    width: 79px;
+}
+
+.gvPedidos_td_TRANSPORTISTA {
+    width: 177px;
+}
+
+.gvPedidos_td_CONDICION {
+    width: 90px;
+}
+
+.gvPedidos_td_AUTORIZACION {
+    width: 154px;
+}
+
+.gvPedidos_td_FECHA {
+    width: 120px;
+}
+
+.gvPedidos_td_RENG {
+    width: 36px;
+}
+
+.gvPedidos_td_OBSERVACIONES {
+    width: 756px;
+}*/
